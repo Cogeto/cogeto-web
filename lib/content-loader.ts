@@ -99,6 +99,35 @@ import {
   complianceUi as deComplianceUi,
 } from "@/content/de/compliance";
 
+import { common as frCommon } from "@/content/fr/common";
+import { home as frHome } from "@/content/fr/home";
+import { trust as frTrust } from "@/content/fr/trust";
+import {
+  docsIndex as frDocsIndex,
+  docsOffline as frDocsOffline,
+  docsQuickstart as frDocsQuickstart,
+  docsSelfHosted as frDocsSelfHosted,
+  docsUi as frDocsUi,
+} from "@/content/fr/docs";
+import { getStarted as frGetStarted } from "@/content/fr/get-started";
+import { security as frSecurity } from "@/content/fr/security";
+import { openSource as frOpenSource } from "@/content/fr/open-source";
+import { whitepaper as frWhitepaper, whitepaperMeta as frWhitepaperMeta } from "@/content/fr/whitepaper";
+import {
+  caseIndex as frCaseIndex,
+  caseStudies as frCaseStudies,
+  csShared as frCsShared,
+} from "@/content/fr/case-studies";
+import { contradictionFindings as frContradictionFindings } from "@/content/fr/product-contradiction-findings";
+import { verifiedMemory as frVerifiedMemory } from "@/content/fr/product-verified-memory";
+import { findingsReport as frFindingsReport } from "@/content/fr/product-findings-report";
+import { privacy as frPrivacy } from "@/content/fr/privacy";
+import { imprint as frImprint } from "@/content/fr/imprint";
+import {
+  complianceContent as frComplianceContent,
+  complianceUi as frComplianceUi,
+} from "@/content/fr/compliance";
+
 /**
  * Static registry of per-locale content. Imports are static so the
  * bundler sees every locale at build time; a missing translation is a
@@ -168,108 +197,126 @@ const commonByLocale: Record<Locale, CommonContent> = {
   en: enCommon,
   hr: hrCommon,
   de: deCommon,
+  fr: frCommon,
 };
 
 const homeByLocale: Record<Locale, HomeContent> = {
   en: enHome,
   hr: hrHome,
   de: deHome,
+  fr: frHome,
 };
 
 const trustByLocale: Record<Locale, TrustContent> = {
   en: enTrust,
   hr: hrTrust,
   de: deTrust,
+  fr: frTrust,
 };
 
 const docsIndexByLocale: Record<Locale, DocsIndexContent> = {
   en: enDocsIndex,
   hr: hrDocsIndex,
   de: deDocsIndex,
+  fr: frDocsIndex,
 };
 
 const docsQuickstartByLocale: Record<Locale, DocsQuickstartContent> = {
   en: enDocsQuickstart,
   hr: hrDocsQuickstart,
   de: deDocsQuickstart,
+  fr: frDocsQuickstart,
 };
 
 const docsSelfHostedByLocale: Record<Locale, DocsSelfHostedContent> = {
   en: enDocsSelfHosted,
   hr: hrDocsSelfHosted,
   de: deDocsSelfHosted,
+  fr: frDocsSelfHosted,
 };
 
 const docsOfflineByLocale: Record<Locale, DocsOfflineContent> = {
   en: enDocsOffline,
   hr: hrDocsOffline,
   de: deDocsOffline,
+  fr: frDocsOffline,
 };
 
 const docsUiByLocale: Record<Locale, DocsUiContent> = {
   en: enDocsUi,
   hr: hrDocsUi,
   de: deDocsUi,
+  fr: frDocsUi,
 };
 
 const getStartedByLocale: Record<Locale, GetStartedContent> = {
   en: enGetStarted,
   hr: hrGetStarted,
   de: deGetStarted,
+  fr: frGetStarted,
 };
 
 const securityByLocale: Record<Locale, SecurityContent> = {
   en: enSecurity,
   hr: hrSecurity,
   de: deSecurity,
+  fr: frSecurity,
 };
 
 const openSourceByLocale: Record<Locale, OpenSourceContent> = {
   en: enOpenSource,
   hr: hrOpenSource,
   de: deOpenSource,
+  fr: frOpenSource,
 };
 
 const whitepaperByLocale: Record<Locale, WhitepaperContent> = {
   en: enWhitepaper,
   hr: hrWhitepaper,
   de: deWhitepaper,
+  fr: frWhitepaper,
 };
 
 const whitepaperMetaByLocale: Record<Locale, WhitepaperMeta> = {
   en: enWhitepaperMeta,
   hr: hrWhitepaperMeta,
   de: deWhitepaperMeta,
+  fr: frWhitepaperMeta,
 };
 
 const caseIndexByLocale: Record<Locale, CaseIndexContent> = {
   en: enCaseIndex,
   hr: hrCaseIndex,
   de: deCaseIndex,
+  fr: frCaseIndex,
 };
 
 const caseStudiesByLocale: Record<Locale, CaseStudy[]> = {
   en: enCaseStudies,
   hr: hrCaseStudies,
   de: deCaseStudies,
+  fr: frCaseStudies,
 };
 
 const csSharedByLocale: Record<Locale, CsSharedContent> = {
   en: enCsShared,
   hr: hrCsShared,
   de: deCsShared,
+  fr: frCsShared,
 };
 
 const privacyByLocale: Record<Locale, PrivacyContent> = {
   en: enPrivacy,
   hr: hrPrivacy,
   de: dePrivacy,
+  fr: frPrivacy,
 };
 
 const imprintByLocale: Record<Locale, ImprintContent> = {
   en: enImprint,
   hr: hrImprint,
   de: deImprint,
+  fr: frImprint,
 };
 
 export type CompliancePage = { content: ComplianceContent; ui: ComplianceUi };
@@ -278,6 +325,7 @@ const complianceByLocale: Record<Locale, CompliancePage> = {
   en: { content: enComplianceContent, ui: enComplianceUi },
   hr: { content: hrComplianceContent, ui: hrComplianceUi },
   de: { content: deComplianceContent, ui: deComplianceUi },
+  fr: { content: frComplianceContent, ui: frComplianceUi },
 };
 
 const productByLocale: Record<Locale, Record<ProductPageKey, ZPageContent>> = {
@@ -295,6 +343,11 @@ const productByLocale: Record<Locale, Record<ProductPageKey, ZPageContent>> = {
     "contradiction-findings": deContradictionFindings,
     "verified-memory": deVerifiedMemory,
     "findings-report": deFindingsReport,
+  },
+  fr: {
+    "contradiction-findings": frContradictionFindings,
+    "verified-memory": frVerifiedMemory,
+    "findings-report": frFindingsReport,
   },
 };
 

@@ -9,7 +9,7 @@ import Footer from "@/components/sections/Footer";
 import "../globals.css";
 
 /**
- * Second root layout: Croatian and German serve under /hr and /de with
+ * Second root layout: Prefixed locales serve under /<locale> with
  * their own <html lang> and localized chrome. English keeps the root
  * URLs via the (en) route group. Only the generated locales exist;
  * anything else 404s.
@@ -21,7 +21,7 @@ export function generateStaticParams() {
   return prefixedLocales.map((locale) => ({ locale }));
 }
 
-const OG_LOCALES: Record<string, string> = { hr: "hr_HR", de: "de_DE" };
+const OG_LOCALES: Record<string, string> = { hr: "hr_HR", de: "de_DE", fr: "fr_FR" };
 
 export async function generateMetadata({
   params,

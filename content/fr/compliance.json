@@ -1,0 +1,220 @@
+{
+  "title": "Conformité sur une seule page",
+  "subtitle": "Comment Cogeto rend l’aspect technique de la conformité prouvable au lieu de simplement l’affirmer",
+  "updated": "2026-08-01",
+  "intro": "Cogeto transforme les documents d'une organisation en mémoire institutionnelle vérifiée : chaque fait est rattaché à sa source, vérifié avant stockage, comparé au reste du corpus pour détecter les contradictions et démontrable auprès d'un tiers. Chaque affirmation de confiance repose sur un artefact consultable. Cette page explique où résident les données, comment elles sont isolées et protégées, comment fonctionnent la suppression, l'export et le rapport de constats signé, quels sous-traitants interviennent et comment l'architecture correspond à la réglementation de l'UE. Lorsqu'un contrôle est organisationnel ou contractuel plutôt que technique, nous le précisons. L'architecture ne suffit pas à assurer la conformité : elle en rend la composante technique démontrable.",
+  "sections": [
+    {
+      "id": "who-we-are",
+      "heading": "Qui nous sommes",
+      "excerpt": "Deux sociétés croates établies dans l'UE développent et exploitent Cogeto ; les rôles de responsable du traitement et de sous-traitant sont définis pour chaque déploiement.",
+      "body": [
+        "Cogeto est développé et exploité par MVT Solutions Group d.o.o. et MCTO Advisory d.o.o., deux sociétés fondées en Croatie, dans l'Union européenne.",
+        "Dans un déploiement géré, le client est responsable du traitement et la société exploitante agit comme sous-traitant pour son compte. Dans un déploiement auto-hébergé ou entièrement hors ligne, le client exploite lui-même l'instance et l'opérateur ne traite aucune donnée."
+      ],
+      "points": [
+        {
+          "label": "Rôles",
+          "text": "Les rôles de responsable du traitement et de sous-traitant sont définis pour chaque déploiement dans l'accord de traitement des données."
+        },
+        {
+          "label": "Contact",
+          "text": "hi@cogeto.eu"
+        }
+      ],
+      "organisational": true
+    },
+    {
+      "id": "where-data-lives",
+      "heading": "Où se trouvent les données",
+      "excerpt": "Une instance isolée par client, sur l'infrastructure de l'UE, vos propres serveurs ou une machine hors ligne isolée.",
+      "body": [
+        "Chaque déploiement est une instance isolée unique qui dessert exactement un client et est installée sur l'infrastructure européenne du choix de l'opérateur. Il existe une composition de processus d'application, de base de données relationnelle, d'index vectoriel, de stockage d'objets et de proxy Edge par client."
+      ],
+      "points": [
+        {
+          "label": "Cloud européen géré",
+          "text": "Opérant sur l’infrastructure de l’UE dans les conditions de données de l’UE."
+        },
+        {
+          "label": "Vos serveurs",
+          "text": "Hébergez vous-même la pile complète sur votre propre infrastructure."
+        },
+        {
+          "label": "Fonctionnement hors ligne",
+          "text": "Complètement isolé, modèles locaux uniquement, rien ne sort de la machine."
+        },
+        {
+          "label": "Résidence des modèles",
+          "text": "Le fournisseur de modèles hébergés par défaut est européen ; la couche modèle peut être entièrement basculée vers des modèles locaux, réduisant ainsi le trafic de modèles externes à zéro."
+        }
+      ]
+    },
+    {
+      "id": "isolation",
+      "heading": "Modèle d'isolement",
+      "excerpt": "Conception dédiée : pas d'index partagé, de cache ou de file d'attente partagée où vos données pourraient se trouver à côté de celles de quelqu'un d'autre.",
+      "body": [
+        "L’isolation est de par sa conception dédiée et ne constitue pas une option de configuration. Étant donné que chaque client exécute sa propre instance, il n'existe pas d'index partagé, pas de cache partagé, pas de file d'attente partagée dans laquelle les données d'un client pourraient coexister avec celles d'un autre, et pas de stockage collectif dont le contrôle d'accès devrait être fiable.",
+        "Nous affirmons ouvertement le risque restant : un hôte compromis compromet sa propre instance, comme dans toute conception dédiée. Le rayon d’impact d’un tel événement est d’un seul client, et c’est exactement le but du modèle d’isolement."
+      ],
+      "points": [
+        {
+          "label": "Aucun autre tenant",
+          "text": "Un client par instance ; il n'existe aucun chemin de données entre clients à sécuriser."
+        }
+      ]
+    },
+    {
+      "id": "encryption",
+      "heading": "Chiffrement en transit et au repos",
+      "excerpt": "Protection des communications jusqu'à la frontière de l'instance, stockage chiffré au repos et chiffrement supplémentaire des identifiants.",
+      "body": [
+        "En transit, la sécurité du transport s'arrête au niveau du proxy Edge de l'instance, et chaque point de terminaison d'application nécessite une authentification avant de répondre.",
+        "Au repos, les documents originaux dans le stockage objet et les volumes hôtes sont chiffrés, et les informations d'identification du connecteur sont également chiffrées au niveau de la couche application avant le stockage."
+      ],
+      "points": [
+        {
+          "label": "Gestion des clés",
+          "text": "Les clés de stockage d'objets sont limitées par l'organisation, l'utilisateur et la visibilité, et les originaux ne sont accessibles que via des URL signées de courte durée protégées par l'indicateur de sensibilité."
+        }
+      ]
+    },
+    {
+      "id": "deletion",
+      "heading": "Suppression vérifiable",
+      "excerpt": "La suppression d'une source crée un reçu signé et enchaîné qui enregistre exactement ce qui a été supprimé, jusqu'aux octets près.",
+      "body": [
+        "Un reçu de suppression est une preuve archivable et vérifiable qu'une suppression a eu lieu et ce qu'elle a exactement supprimé. La suppression d'une source exécute un protocole de compensation en cinq étapes à travers le stockage relationnel, l'index vectoriel et le stockage d'objets, aboutissant à un reçu signé.",
+        "Chaque reçu enregistre la source, le nombre d'entrées de connaissances supprimées, les points vectoriels et les octets, ainsi que les horodatages pour l'initiation et la confirmation. Il est signé avec la clé de l'instance et enchaîné à son prédécesseur, de sorte qu'aucun reçu ne puisse être modifié ou supprimé ultérieurement sans rompre la chaîne. Une analyse nocturne vérifie à nouveau que rien de supprimé n'existe, transformant chaque reçu en une déclaration de fait continuellement revérifiée plutôt qu'en une déclaration d'intention."
+      ],
+      "note": "Les reçus prouvent la suppression dans les stockages propres au système. Ils ne peuvent pas retirer rétroactivement un contenu déjà traité par un fournisseur de modèles externe selon ses conditions. C'est pourquoi la suppression est associée à l'option de modèles locaux, qui limite dès l'origine ce qui quitte l'instance.",
+      "organisational": false
+    },
+    {
+      "id": "export",
+      "heading": "Export de données : le passeport mémoire",
+      "excerpt": "Tout ce que vous détenez quitte le système dans une archive signée, dans un format ouvert que vous pouvez vérifier sans aucun code Cogeto.",
+      "body": [
+        "Il n'y a aucun verrouillage propriétaire. Chaque utilisateur peut exporter tout ce qu'il détient : faits et statuts, sources, historique complet de validité et reçus de suppression, dans une archive signée au format ouvert, documenté et versionné.",
+        "Le format est entièrement publié. Un passeport peut être lu et vérifié pour son intégrité en utilisant uniquement les schémas publics et la clé d'instance publique contenus dans l'archive, sans aucun code ou service Cogeto."
+      ],
+      "points": [
+        {
+          "label": "Format ouvert",
+          "text": "Une archive .zip contenant un fichier JSON par document, chacun couvert par un schéma JSON public, ainsi qu'une signature distincte du manifeste."
+        }
+      ]
+    },
+    {
+      "id": "findings-report",
+      "heading": "Le rapport de constats signé",
+      "excerpt": "Preuve d'audit d'un ensemble défini de documents : chaque contradiction avec ses sources, signée afin que des tiers puissent la vérifier.",
+      "body": [
+        "Un rapport de constats est un artefact signé et imprimable portant sur un ensemble de sources explicitement sélectionné. Son en-tête indique l'instance, le périmètre du corpus, la plage de dates, la configuration du modèle et ses scores de précision mesurés. L'artefact déclare ainsi la précision du système qui l'a produit.",
+        "Chaque contradiction présente les deux affirmations, les deux phrases sources verbatim, le document, sa révision et sa référence pour chaque partie, la date de détection et l'état de résolution. Les déclarations remplacées apparaissent avec leur chaîne, suivies d'un résumé des extractions écartées. Les constats renvoyant à un document hors du périmètre sélectionné figurent dans une section clairement identifiée."
+      ],
+      "points": [
+        {
+          "label": "Deux formats",
+          "text": "PDF pour les personnes, JSON pour les systèmes qualité, tous deux signés via le même chemin que les reçus de suppression."
+        },
+        {
+          "label": "Portée définie",
+          "text": "La signature couvre un ensemble de documents expressément sélectionnés, de sorte que ce qui a été vérifié fait également partie des preuves."
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "heading": "Comment Cogeto reçoit les emails",
+      "excerpt": "L'e-mail arrive uniquement par transfert vers une adresse dédiée. Cogeto ne se connecte jamais à votre boîte mail.",
+      "body": [
+        "Le courrier électronique entrant est désactivé par défaut et n'est activé par déploiement que si le client le demande. S'il est activé, l'e-mail entre dans Cogeto exclusivement via la redirection : le déploiement fournit une adresse entrante dédiée et l'utilisateur ou son système de messagerie y transfère les messages. Cogeto ne se connecte jamais à une boîte mail.",
+        "Une liste d'expéditeurs autorisés détermine qui peut transférer des documents ; les messages provenant d'autres expéditeurs ne sont pas ingérés. Le canal fonctionne uniquement en réception : aucun accès à la boîte mail, aucune connexion IMAP ni autorisation OAuth sur celle-ci. Cogeto ne peut rien envoyer, supprimer ou modifier dans la boîte mail de l'utilisateur."
+      ],
+      "points": [
+        {
+          "label": "Désactivé par défaut",
+          "text": "Le service de courrier entrant ne s'exécute que s'il est explicitement activé pour le déploiement."
+        },
+        {
+          "label": "Réception uniquement",
+          "text": "Le transfert entrant est le seul mécanisme ; rien ne lit ni ne modifie la boîte mail source."
+        },
+        {
+          "label": "Liste blanche des expéditeurs",
+          "text": "Seuls les expéditeurs approuvés peuvent transférer du matériel vers la mémoire."
+        }
+      ]
+    },
+    {
+      "id": "subprocessors",
+      "heading": "Sous-traitants",
+      "excerpt": "La liste dépend du déploiement. Une instance auto-hébergée ou hors ligne peut fonctionner sans sous-traitant externe.",
+      "body": [
+        "La liste des sous-traitants dépend du déploiement. Une instance auto-hébergée ou entièrement hors ligne peut se passer de sous-traitants externes au-delà de la propre infrastructure du client."
+      ],
+      "points": [
+        {
+          "label": "Inférence des modèles et embeddings",
+          "text": "Mistral AI, Paris, France (UE), pour le niveau hébergé standard. Les options européennes de résidence des données s'appliquent ; les conditions exactes sont déterminées pour chaque déploiement. Dans un déploiement entièrement isolé, aucun fournisseur de modèles externe n'est utilisé."
+        },
+        {
+          "label": "Hébergement et infrastructure",
+          "text": "Le cloud européen ou l'infrastructure propre choisie par l'opérateur pour l'instance dédiée."
+        }
+      ],
+      "organisational": true
+    },
+    {
+      "id": "regulatory",
+      "heading": "Cartographie réglementaire",
+      "excerpt": "Comment l'architecture rend démontrable la composante technique du RGPD et de l'AI Act.",
+      "body": [
+        "Nous ne prétendons pas que l’architecture représente à elle seule la conformité, car la conformité comporte toujours des composantes organisationnelles et contractuelles. Nous affirmons que cette architecture rend la partie technique prouvable au lieu de simplement l'affirmer."
+      ],
+      "points": [
+        {
+          "label": "RGPD, article 17, droit à l'effacement",
+          "text": "Le protocole de suppression et ses reçus chaînés par hachage assurent l'effacement et fournissent la preuve de son exécution."
+        },
+        {
+          "label": "RGPD Art. 25, protection des données grâce à une conception technique et à des paramètres par défaut respectueux de la protection des données",
+          "text": "L'isolation dédiée, la preuve d'origine obligatoire, les limites de visibilité strictes appliquées dans le stockage lui-même, le chiffrement au repos et le flux de données externe minimal sont des caractéristiques de l'architecture, et non des paramètres dessus."
+        },
+        {
+          "label": "AI Act, approche de transparence",
+          "text": "Le système est conçu pour divulguer son travail : un lien source sur chaque fait, un statut explicite sur chaque déclaration, un enregistrement d'audit sur chaque action, des invites publiées et une précision publiée sur la page des valeurs de précision."
+        }
+      ]
+    }
+  ],
+  "receipt": {
+    "caption": "Exemple de reçu de suppression",
+    "note": "À titre d'illustration uniquement. Il s'agit de l'exemple fictif du Memory Passport public, une personne de démonstration dans le bac à sable. Le hachage et la signature sont des espaces réservés, non de la cryptographie réelle. Un reçu provenant d'une instance de production porte une véritable chaîne de hachage et une véritable signature, que vous pouvez vérifier avec la clé publique de l'instance.",
+    "value": {
+      "id": "55555555-5555-4555-8555-555555555555",
+      "source_type": "user_note",
+      "source_id": "note-old",
+      "counts_json": {
+        "requested_by": "ana",
+        "enumerated_at": "2026-06-30T12:00:00.000Z",
+        "memory_count": 2,
+        "object_keys": []
+      },
+      "signed_at": "2026-06-30T12:00:03.000Z",
+      "confirmed_at": "2026-06-30T12:00:03.000Z",
+      "prev_hash": "cogeto:deletion-receipt-chain:genesis",
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "signature": "c2FtcGxlLXBsYWNlaG9sZGVyLXNpZ25hdHVyZS1ub3QtcmVhbA=="
+    }
+  },
+  "links": {
+    "passportSchema": "https://github.com/Cogeto/cogeto/tree/main/docs/passport-schema",
+    "trustScores": "https://github.com/Cogeto/cogeto/tree/main/eval/trust-scores",
+    "repo": "https://github.com/Cogeto/cogeto",
+    "whitepaper": "/documents/cogeto-whitepaper.pdf"
+  },
+  "closing": "Chaque affirmation de cette page correspond à un mécanisme du produit ou à un fichier du dépôt public. Consultez le livre blanc pour la conception complète, la page des scores de précision pour les mesures publiées et le code source pour les mécanismes qui les appliquent."
+}

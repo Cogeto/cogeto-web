@@ -19,6 +19,7 @@ import { localeHref, locales } from "@/lib/i18n";
 const LOCALE_NAMES: Record<Locale, string> = {
   en: "English",
   hr: "Hrvatski",
+  fr: "Français",
   de: "Deutsch",
 };
 

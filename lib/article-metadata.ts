@@ -6,13 +6,14 @@ import { getCommon } from "./content-loader";
 /**
  * hreflang alternates for a localized route. `path` is the unprefixed
  * base path ("/security", "/", ...); English is the x-default. Only use
- * for routes that actually exist in all three locales.
+ * for routes that actually exist in all locales.
  */
 export function languageAlternates(path: string): Record<string, string> {
   return {
     en: path,
     hr: localeHref("hr", path),
     de: localeHref("de", path),
+    fr: localeHref("fr", path),
     "x-default": path,
   };
 }

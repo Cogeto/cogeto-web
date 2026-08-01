@@ -1,20 +1,20 @@
 /**
- * Croatian and German serve under /hr and /de. Adding a locale means:
+ * Croatian, German, and French serve under /hr, /de, and /fr. Adding a locale means:
  * add it to `locales`, provide content/<locale>/, and register it in
  * lib/content-loader.ts.
  */
 
-export const locales = ["en", "hr", "de"] as const;
+export const locales = ["en", "hr", "de", "fr"] as const;
 
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "en";
 
 /** Locales whose content exists and is routable today. */
-export const activeLocales: readonly Locale[] = ["en", "hr", "de"] as const;
+export const activeLocales: readonly Locale[] = ["en", "hr", "de", "fr"] as const;
 
 /** The prefixed locales, i.e. everything served under /<locale>. */
-export const prefixedLocales: readonly Locale[] = ["hr", "de"] as const;
+export const prefixedLocales: readonly Locale[] = ["hr", "de", "fr"] as const;
 
 /** Prefix a site-internal path with the locale segment. */
 export function localeHref(locale: Locale, path: string): string {
