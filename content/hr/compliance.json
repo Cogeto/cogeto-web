@@ -1,0 +1,163 @@
+{
+  "title": "Sažetak usklađenosti",
+  "subtitle": "Kako Cogeto tehničku stranu usklađenosti čini dokazivom, a ne samo deklariranom",
+  "updated": "2026-08-01",
+  "intro": "Cogeto pretvara dokumente organizacije u provjerenu institucionalnu memoriju: svaka je činjenica povezana sa svojim izvorom, provjerena prije pohrane, uspoređena radi proturječnosti sa svime ostalim što je pohranjeno i dokaziva trećoj strani. Svaku tvrdnju o povjerenju podupire artefakt koji možete pregledati. Ovaj sažetak opisuje gdje podaci žive, kako su izolirani i zaštićeni, kako rade brisanje, izvoz i potpisano izvješće o nalazima, tko su podizvršitelji obrade i kako se dizajn preslikava na propise EU. Tamo gdje je kontrola organizacijska ili ugovorna, a ne tehnička, to otvoreno kažemo. Sama arhitektura nije usklađenost: ona je onaj dio usklađenosti koji sustav može dokazati.",
+  "sections": [
+    {
+      "id": "who-we-are",
+      "heading": "Tko smo mi",
+      "excerpt": "Cogeto razvijaju i vode dvije hrvatske tvrtke iz EU, s ulogama voditelja i izvršitelja obrade utvrđenima po implementaciji.",
+      "body": [
+        "Cogeto razvijaju i vode MVT Solutions Group d.o.o. i MCTO Advisory d.o.o., oba društva osnovana u Hrvatskoj, u Europskoj uniji.",
+        "Kod upravljane implementacije korisnik je voditelj obrade, a operativno društvo djeluje kao izvršitelj obrade u ime korisnika. Kod samostalno hostane ili potpuno offline implementacije korisnik sam upravlja instancom i obrada od strane operatera ne postoji."
+      ],
+      "points": [
+        { "label": "Uloge", "text": "Uloge voditelja i izvršitelja obrade utvrđuju se po implementaciji ugovorom o obradi podataka." },
+        { "label": "Kontakt", "text": "hi@cogeto.eu" }
+      ],
+      "organisational": true
+    },
+    {
+      "id": "where-data-lives",
+      "heading": "Gdje podaci žive",
+      "excerpt": "Jedna izolirana instanca po korisniku, na infrastrukturi u EU, na vašim poslužiteljima ili na zatvorenom offline računalu.",
+      "body": [
+        "Svaka je implementacija jedna izolirana instanca koja služi točno jednom korisniku, podignuta na infrastrukturi u EU po izboru operatera. Po korisniku postoji jedna kompozicija aplikacijskih procesa, relacijske baze, vektorskog indeksa, objektne pohrane i rubnog proxyja."
+      ],
+      "points": [
+        { "label": "Upravljani oblak u EU", "text": "Rad na infrastrukturi u EU pod EU uvjetima o podacima." },
+        { "label": "Vaši poslužitelji", "text": "Cijeli sustav hostajte sami na vlastitoj infrastrukturi." },
+        { "label": "Offline okruženje", "text": "Potpuno izolirano, samo lokalni modeli, ništa ne napušta računalo." },
+        { "label": "Rezidentnost modela", "text": "Zadani hostani pružatelj modela je europski; sloj modela može se u cijelosti usmjeriti na lokalne modele pa vanjski promet prema modelima postaje nula." }
+      ]
+    },
+    {
+      "id": "isolation",
+      "heading": "Model izolacije",
+      "excerpt": "Jedan korisnik po instanci prema samoj konstrukciji: nema dijeljenog indeksa, predmemorije ni reda čekanja u kojem bi vaši podaci mogli biti uz tuđe.",
+      "body": [
+        "Izolacija je jednokorisnička prema samoj konstrukciji, a ne konfiguracijska opcija. Budući da svaki korisnik ima zasebnu instancu, ne postoji dijeljeni indeks, predmemorija ni red čekanja u kojem bi podaci jednog korisnika ikada mogli biti uz podatke drugoga, ni zajedničko spremište u čiju bi se kontrolu pristupa moralo pouzdati.",
+        "Preostali rizik navodimo otvoreno: kompromitirani host kompromitira vlastitu instancu, kao u svakom jednokorisničkom dizajnu. Doseg takvog događaja jest jedan korisnik, što je upravo smisao modela izolacije."
+      ],
+      "points": [
+        { "label": "Bez susjeda", "text": "Jedan korisnik po instanci; ne postoji put podataka između korisnika koji bi trebalo štititi." }
+      ]
+    },
+    {
+      "id": "encryption",
+      "heading": "Enkripcija u prijenosu i mirovanju",
+      "excerpt": "Sigurnost prijenosa do ruba instance, enkriptirana pohrana u mirovanju i vjerodajnice enkriptirane još jednom.",
+      "body": [
+        "U prijenosu, transportna sigurnost završava na rubnom proxyju instance, a svaka aplikacijska krajnja točka zahtijeva autentifikaciju prije nego što odgovori.",
+        "U mirovanju, izvorni dokumenti enkriptirani su u objektnoj pohrani i na diskovima hosta, a vjerodajnice konektora dodatno se enkriptiraju na aplikacijskom sloju prije pohrane."
+      ],
+      "points": [
+        { "label": "Rukovanje ključevima", "text": "Ključevi objektne pohrane ograničeni su po organizaciji, korisniku i vidljivosti, a izvornici su dostupni samo kroz kratkotrajne potpisane URL-ove uvjetovane oznakom osjetljivosti." }
+      ]
+    },
+    {
+      "id": "deletion",
+      "heading": "Dokazivo brisanje",
+      "excerpt": "Brisanje izvora proizvodi potpisanu, ulančanu potvrdu koja bilježi točno što je uklonjeno, do razine bajtova.",
+      "body": [
+        "Potvrda o brisanju pohranjiv je, provjerljiv dokaz da se brisanje dogodilo i točno što je uklonilo. Brisanje izvora pokreće kompenzacijski protokol u pet koraka kroz relacijsko spremište, vektorski indeks i objektnu pohranu, a završava potpisanom potvrdom.",
+        "Svaka potvrda bilježi izvor, broj uklonjenih memorijskih zapisa, vektorskih točaka i bajtova te vremenske oznake pokretanja i potvrde. Potpisana je ključem instance i ulančana s prethodnicom, pa se nijedna potvrda kasnije ne može izmijeniti ni ukloniti bez prekida lanca. Noćna provjera iznova potvrđuje da ništa obrisano više ne postoji, čime svaka potvrda od zapisa o namjeri postaje kontinuirano iznova provjeravana izjava o činjenici."
+      ],
+      "note": "Potvrde dokazuju uklanjanje iz vlastitih spremišta sustava. One ne mogu retroaktivno povući sadržaj koji je vanjski pružatelj modela već obradio pod svojim uvjetima, i upravo je zato brisanje upareno s opcijom izolacije na lokalne modele, koja unaprijed ograničava što uopće napušta instancu.",
+      "organisational": false
+    },
+    {
+      "id": "export",
+      "heading": "Izvoz podataka: Memory Passport",
+      "excerpt": "Sve što držite odlazi u jednoj potpisanoj arhivi, u otvorenom formatu koji možete provjeriti bez ikakvog Cogetova koda.",
+      "body": [
+        "Nema vezanja uz dobavljača. Svaki korisnik može izvesti sve što drži, od činjenica i njihovih statusa do izvora, potpune povijesti valjanosti i potvrda o brisanju, kao jednu potpisanu arhivu u otvorenom, dokumentiranom i verzioniranom formatu.",
+        "Format je objavljen u cijelosti. Passport se može pročitati i njegov integritet provjeriti samo pomoću javnih shema i javnog ključa instance koji se nalaze u arhivi, bez ikakvog Cogetova koda ili servisa."
+      ],
+      "points": [
+        { "label": "Otvoreni format", "text": "Jedna .zip datoteka s JSON-om po dokumentu, svaki pokriven javnom JSON shemom, uz odvojeni potpis nad manifestom." }
+      ]
+    },
+    {
+      "id": "findings-report",
+      "heading": "Potpisano izvješće o nalazima",
+      "excerpt": "Revizijski dokaz nad definiranim opsegom dokumenata: svaka proturječnost sa svojim izvorima, potpisana tako da je treća strana može provjeriti.",
+      "body": [
+        "Izvješće o nalazima potpisani je, ispisiv zapis izrađen nad izričito odabranim skupom izvora. Njegovo zaglavlje navodi instancu, opseg korpusa, raspon datuma, konfiguraciju modela i izmjerene rezultate točnosti te konfiguracije, pa artefakt sam deklarira točnost sustava koji ga je proizveo.",
+        "Svaka se proturječnost prikazuje s obje tvrdnje, obje doslovne rečenice iz izvora, dokumentom s revizijom i mjestom za svaku stranu, datumom otkrivanja i statusom razrješenja. Zamijenjene izjave prikazuju se sa svojim lancima, a slijedi sažetak onoga što je provjera odbacila. Nalazi koji upućuju na dokument izvan odabranog opsega prikazuju se u jasno označenom rubnom odjeljku, umjesto da budu prešutno uključeni ili izostavljeni."
+      ],
+      "points": [
+        { "label": "Dva formata", "text": "PDF za ljude, JSON za sustave kvalitete, oba potpisana istim putem kao potvrde o brisanju." },
+        { "label": "Definiran opseg", "text": "Potpis pokriva izričito odabran skup dokumenata, pa je i ono što je revidirano dio zapisa." }
+      ]
+    },
+    {
+      "id": "email",
+      "heading": "Kako Cogeto prima e-poštu",
+      "excerpt": "E-pošta stiže samo prosljeđivanjem na namjensku adresu. Cogeto se nikada ne spaja na vaš poštanski sandučić.",
+      "body": [
+        "Dolazna e-pošta zadano je isključena i uključuje se po implementaciji samo kada je korisnik želi. Kada je uključena, e-pošta ulazi u Cogeto isključivo prosljeđivanjem: implementacija izlaže namjensku dolaznu adresu, a korisnik ili njegov sustav e-pošte prosljeđuje poruke na nju. Cogeto se nikada ne spaja na poštanski sandučić.",
+        "Popis dopuštenih pošiljatelja određuje tko smije prosljeđivati materijal; poruke pošiljatelja koji nisu na popisu ne unose se. Kanal je isključivo prijamni: nema pristupa sandučiću, nema IMAP veze i nema OAuth opsega za sandučić, a Cogeto ne može ništa poslati, obrisati ni izmijeniti u korisnikovu sandučiću."
+      ],
+      "points": [
+        { "label": "Zadano isključeno", "text": "Servis dolazne e-pošte radi samo kada je izričito uključen za implementaciju." },
+        { "label": "Samo primanje", "text": "Prosljeđivanje je jedini put unosa; ništa ne čita ni ne mijenja izvorni sandučić." },
+        { "label": "Popis dopuštenih pošiljatelja", "text": "Samo odobreni pošiljatelji mogu proslijediti materijal u memoriju." }
+      ]
+    },
+    {
+      "id": "subprocessors",
+      "heading": "Podizvršitelji obrade",
+      "excerpt": "Popis ovisi o implementaciji. Samostalno hostana ili offline instanca može biti bez ikakvih vanjskih podizvršitelja.",
+      "body": [
+        "Popis podizvršitelja obrade ovisi o implementaciji. Samostalno hostana ili potpuno offline instanca može biti bez vanjskih podizvršitelja izvan vlastite infrastrukture korisnika."
+      ],
+      "points": [
+        { "label": "Zaključivanje modela i vektorski prikazi", "text": "Mistral AI, Pariz, Francuska (EU), za zadanu hostanu razinu. Primjenjuju se opcije europske rezidentnosti podataka, a točni se uvjeti utvrđuju po implementaciji. U potpuno izoliranoj implementaciji ne koristi se nijedan vanjski pružatelj modela." },
+        { "label": "Hosting i infrastruktura", "text": "Oblak u EU ili vlastita infrastruktura koju operater odabere za jednokorisničku instancu." }
+      ],
+      "organisational": true
+    },
+    {
+      "id": "regulatory",
+      "heading": "Regulatorno mapiranje",
+      "excerpt": "Kako arhitektura tehnički dio GDPR-a i Akta o umjetnoj inteligenciji čini dokazivim, a ne obećanim.",
+      "body": [
+        "Ne tvrdimo da sama arhitektura predstavlja usklađenost, koja uvijek ima i organizacijske i ugovorne sastavnice. Tvrdimo da ova arhitektura tehnički dio čini dokazivim, a ne samo deklariranim."
+      ],
+      "points": [
+        { "label": "GDPR, članak 17., pravo na brisanje", "text": "Protokol brisanja i njegove hash lancem povezane potvrde daju ispitaniku ne samo brisanje nego i dokaz o njemu." },
+        { "label": "GDPR, članak 25., tehnička i integrirana zaštita podataka", "text": "Jednokorisnička izolacija, obvezna provenijencija, čvrste kontrole vidljivosti koje se provode unutar samog spremišta, enkripcija u mirovanju i minimalan vanjski protok podataka svojstva su arhitekture, a ne postavke povrh nje." },
+        { "label": "Akt o umjetnoj inteligenciji, transparentnost", "text": "Sustav je građen da pokaže kako radi: poveznica na izvor uz svaku činjenicu, izričit status uz svako uvjerenje, revizijski zapis uz svaku radnju, objavljeni promptovi i objavljena točnost na stranici rezultata točnosti." }
+      ]
+    }
+  ],
+  "receipt": {
+    "caption": "Primjer potvrde o brisanju",
+    "note": "Samo ilustrativno. Ovo je izmišljeni primjer iz javnog Memory Passporta (demo persona u sandboxu). Njegov hash i potpis zamjenske su vrijednosti, a ne prava kriptografija. Potvrda iz stvarne instance nosi pravi hash lanac i pravi potpis koji možete provjeriti prema javnom ključu instance.",
+    "value": {
+      "id": "55555555-5555-4555-8555-555555555555",
+      "source_type": "user_note",
+      "source_id": "note-old",
+      "counts_json": {
+        "requested_by": "ana",
+        "enumerated_at": "2026-06-30T12:00:00.000Z",
+        "memory_count": 2,
+        "object_keys": []
+      },
+      "signed_at": "2026-06-30T12:00:03.000Z",
+      "confirmed_at": "2026-06-30T12:00:03.000Z",
+      "prev_hash": "cogeto:deletion-receipt-chain:genesis",
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "signature": "c2FtcGxlLXBsYWNlaG9sZGVyLXNpZ25hdHVyZS1ub3QtcmVhbA=="
+    }
+  },
+  "links": {
+    "passportSchema": "https://github.com/Cogeto/cogeto/tree/main/docs/passport-schema",
+    "trustScores": "https://github.com/Cogeto/cogeto/tree/main/eval/trust-scores",
+    "repo": "https://github.com/Cogeto/cogeto",
+    "whitepaper": "/documents/cogeto-whitepaper.pdf"
+  },
+  "closing": "Svaka tvrdnja na ovoj stranici odgovara mehanizmu u proizvodu ili datoteci u javnom repozitoriju. Pročitajte bijelu knjigu za cjelovit dizajn, stranicu rezultata točnosti za izmjerenu točnost i izvorni kod za kod koji sve to provodi."
+}

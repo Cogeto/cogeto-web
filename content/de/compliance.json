@@ -1,0 +1,163 @@
+{
+  "title": "Compliance auf einer Seite",
+  "subtitle": "Wie Cogeto die technische Seite der Compliance belegbar macht, statt sie nur zu behaupten",
+  "updated": "2026-08-01",
+  "intro": "Cogeto macht aus den Dokumenten einer Organisation verifiziertes institutionelles Wissen: jeder Fakt auf seine Quelle zurückgeführt, vor der Speicherung verifiziert, gegen alles andere Gespeicherte auf Widersprüche geprüft und gegenüber Dritten belegbar. Jede Vertrauensaussage ist durch ein Artefakt gedeckt, das Sie einsehen können. Diese Seite fasst zusammen, wo Daten liegen, wie sie isoliert und geschützt sind, wie Löschung, Export und der signierte Befundbericht funktionieren, wer die Unterauftragsverarbeiter sind und wie sich das Design der EU-Regulierung zuordnen lässt. Wo eine Kontrolle organisatorisch oder vertraglich statt technisch ist, sagen wir das offen. Architektur allein ist keine Compliance: Sie ist der Teil der Compliance, den ein System beweisen kann.",
+  "sections": [
+    {
+      "id": "who-we-are",
+      "heading": "Wer wir sind",
+      "excerpt": "Zwei kroatische EU-Unternehmen entwickeln und betreiben Cogeto, mit je Deployment festgelegten Rollen von Verantwortlichem und Auftragsverarbeiter.",
+      "body": [
+        "Cogeto wird von MVT Solutions Group d.o.o. und MCTO Advisory d.o.o. entwickelt und betrieben, beide gegründet in Kroatien, in der Europäischen Union.",
+        "Bei einem verwalteten Deployment ist der Kunde der Verantwortliche, und das betreibende Unternehmen handelt als Auftragsverarbeiter im Auftrag des Kunden. Bei einem selbst gehosteten oder vollständig offline betriebenen Deployment betreibt der Kunde die Instanz selbst, und es findet keine Verarbeitung durch den Betreiber statt."
+      ],
+      "points": [
+        { "label": "Rollen", "text": "Die Rollen von Verantwortlichem und Auftragsverarbeiter werden je Deployment im Auftragsverarbeitungsvertrag festgelegt." },
+        { "label": "Kontakt", "text": "hi@cogeto.eu" }
+      ],
+      "organisational": true
+    },
+    {
+      "id": "where-data-lives",
+      "heading": "Wo Daten liegen",
+      "excerpt": "Eine isolierte Instanz pro Kunde, auf EU-Infrastruktur, Ihren eigenen Servern oder einer abgeschotteten Offline-Maschine.",
+      "body": [
+        "Jedes Deployment ist eine einzelne isolierte Instanz, die genau einen Kunden bedient und auf EU-Infrastruktur nach Wahl des Betreibers aufgesetzt wird. Pro Kunde gibt es eine Komposition aus Anwendungsprozessen, relationaler Datenbank, Vektorindex, Objektspeicher und Edge-Proxy."
+      ],
+      "points": [
+        { "label": "Verwaltete EU-Cloud", "text": "Betrieb auf EU-Infrastruktur unter EU-Datenbedingungen." },
+        { "label": "Ihre Server", "text": "Hosten Sie den vollständigen Stack selbst auf Ihrer eigenen Infrastruktur." },
+        { "label": "Offline-Betrieb", "text": "Vollständig isoliert, nur lokale Modelle, nichts verlässt die Maschine." },
+        { "label": "Modellresidenz", "text": "Der Standardanbieter für gehostete Modelle ist europäisch; die Modellschicht kann vollständig auf lokale Modelle umgestellt werden, sodass externer Modellverkehr auf null sinkt." }
+      ]
+    },
+    {
+      "id": "isolation",
+      "heading": "Isolationsmodell",
+      "excerpt": "Single-Tenant per Konstruktion: kein geteilter Index, Cache oder geteilte Warteschlange, in der Ihre Daten je neben fremden liegen könnten.",
+      "body": [
+        "Die Isolation ist Single-Tenant per Konstruktion, keine Konfigurationsoption. Weil jeder Kunde eine eigene Instanz betreibt, gibt es keinen geteilten Index, keinen geteilten Cache und keine geteilte Warteschlange, in denen die Daten eines Kunden je neben denen eines anderen liegen könnten, und keinen Sammelspeicher, dessen Zugriffskontrolle man vertrauen müsste.",
+        "Das Restrisiko benennen wir offen: Ein kompromittierter Host kompromittiert seine eigene Instanz, wie in jedem Single-Tenant-Design. Der Wirkungsradius eines solchen Ereignisses ist ein Kunde, und genau das ist der Sinn des Isolationsmodells."
+      ],
+      "points": [
+        { "label": "Kein Mitmieter", "text": "Ein Kunde pro Instanz; es existiert kein mandantenübergreifender Datenpfad, den man absichern müsste." }
+      ]
+    },
+    {
+      "id": "encryption",
+      "heading": "Verschlüsselung bei Übertragung und im Ruhezustand",
+      "excerpt": "Transportsicherheit bis zum Rand der Instanz, verschlüsselte Speicherung im Ruhezustand und ein zweites Mal verschlüsselte Zugangsdaten.",
+      "body": [
+        "Bei der Übertragung endet die Transportsicherheit am Edge-Proxy der Instanz, und jeder Anwendungsendpunkt verlangt Authentifizierung, bevor er antwortet.",
+        "Im Ruhezustand sind Originaldokumente im Objektspeicher und auf den Volumes des Hosts verschlüsselt, und Konnektor-Zugangsdaten werden vor der Speicherung zusätzlich auf Anwendungsebene verschlüsselt."
+      ],
+      "points": [
+        { "label": "Schlüsselhandhabung", "text": "Objektspeicher-Schlüssel sind nach Organisation, Benutzer und Sichtbarkeit begrenzt, und Originale sind nur über kurzlebige signierte URLs erreichbar, die durch die Sensibilitätsmarkierung geschützt sind." }
+      ]
+    },
+    {
+      "id": "deletion",
+      "heading": "Belegbare Löschung",
+      "excerpt": "Das Löschen einer Quelle erzeugt eine signierte, verkettete Quittung, die genau festhält, was entfernt wurde, bis auf die Bytes.",
+      "body": [
+        "Eine Löschquittung ist ein ablagefähiger, verifizierbarer Nachweis, dass eine Löschung stattgefunden hat und was genau sie entfernt hat. Das Löschen einer Quelle führt ein kompensierendes Protokoll in fünf Schritten über den relationalen Speicher, den Vektorindex und den Objektspeicher aus und endet in einer signierten Quittung.",
+        "Jede Quittung hält die Quelle fest, die Zahl der entfernten Wissenseinträge, Vektorpunkte und Bytes sowie die Zeitstempel für Einleitung und Bestätigung. Sie ist mit dem Instanzschlüssel signiert und mit ihrer Vorgängerin verkettet, sodass keine Quittung nachträglich verändert oder entfernt werden kann, ohne die Kette zu brechen. Ein nächtlicher Lauf prüft erneut, dass nichts Gelöschtes noch existiert, und macht so aus jeder Quittung statt einer Absichtserklärung eine fortlaufend neu verifizierte Tatsachenfeststellung."
+      ],
+      "note": "Quittungen belegen die Entfernung aus den eigenen Speichern des Systems. Sie können Inhalte, die ein externer Modellanbieter unter dessen Bedingungen bereits verarbeitet hat, nicht rückwirkend zurückholen, und genau deshalb ist die Löschung mit der Option der lokalen Modellisolation gekoppelt, die von vornherein begrenzt, was die Instanz überhaupt verlässt.",
+      "organisational": false
+    },
+    {
+      "id": "export",
+      "heading": "Datenexport: der Memory Passport",
+      "excerpt": "Alles, was Sie halten, verlässt das System in einem signierten Archiv, in einem offenen Format, das Sie ohne jeden Cogeto-Code verifizieren können.",
+      "body": [
+        "Es gibt keinen Lock-in. Jeder Benutzer kann alles exportieren, was er hält, von Fakten und ihren Status über Quellen und die vollständige Gültigkeitshistorie bis zu Löschquittungen, als ein einziges signiertes Archiv in einem offenen, dokumentierten, versionierten Format.",
+        "Das Format ist vollständig veröffentlicht. Ein Passport lässt sich allein mit den öffentlichen Schemas und dem im Archiv enthaltenen öffentlichen Instanzschlüssel lesen und auf Integrität prüfen, ohne jeden Cogeto-Code oder -Dienst."
+      ],
+      "points": [
+        { "label": "Offenes Format", "text": "Eine einzelne .zip-Datei mit JSON je Dokument, jedes durch ein öffentliches JSON-Schema abgedeckt, plus eine separate Signatur über das Manifest." }
+      ]
+    },
+    {
+      "id": "findings-report",
+      "heading": "Der signierte Befundbericht",
+      "excerpt": "Auditnachweis über einen definierten Dokumentenumfang: jeder Widerspruch mit seinen Quellen, signiert, damit Dritte ihn verifizieren können.",
+      "body": [
+        "Ein Befundbericht ist ein signierter, druckbarer Nachweis über eine ausdrücklich ausgewählte Menge von Quellen. Sein Kopf nennt die Instanz, den Korpusumfang, den Datumsbereich, die Modellkonfiguration und deren gemessene Genauigkeitswerte, sodass das Artefakt selbst die Genauigkeit des Systems ausweist, das es erzeugt hat.",
+        "Jeder Widerspruch erscheint mit beiden Aussagen, beiden wörtlichen Quellsätzen, dem Dokument mit Revision und Fundstelle für jede Seite, dem Erkennungsdatum und dem Auflösungsstatus. Ersetzte Aussagen erscheinen mit ihren Ketten, gefolgt von einer Zusammenfassung dessen, was die Verifikation verworfen hat. Befunde, die auf ein Dokument außerhalb des gewählten Umfangs verweisen, erscheinen in einem klar gekennzeichneten Randabschnitt, statt stillschweigend aufgenommen oder verworfen zu werden."
+      ],
+      "points": [
+        { "label": "Zwei Formate", "text": "PDF für Menschen, JSON für Qualitätssysteme, beide über denselben Pfad signiert wie Löschquittungen." },
+        { "label": "Definierter Umfang", "text": "Die Signatur deckt eine ausdrücklich ausgewählte Dokumentenmenge ab, sodass auch das Geprüfte Teil des Nachweises ist." }
+      ]
+    },
+    {
+      "id": "email",
+      "heading": "Wie Cogeto E-Mail empfängt",
+      "excerpt": "E-Mail kommt nur per Weiterleitung an eine dedizierte Adresse an. Cogeto verbindet sich nie mit Ihrem Postfach.",
+      "body": [
+        "Eingehende E-Mail ist standardmäßig deaktiviert und wird je Deployment nur aktiviert, wenn der Kunde es wünscht. Ist sie aktiviert, gelangt E-Mail ausschließlich per Weiterleitung in Cogeto: Das Deployment stellt eine dedizierte Eingangsadresse bereit, und der Benutzer oder sein Mailsystem leitet Nachrichten dorthin weiter. Cogeto verbindet sich nie mit einem Postfach.",
+        "Eine Absender-Positivliste steuert, welche Absender Material hineinleiten dürfen; Nachrichten von Absendern, die nicht auf der Liste stehen, werden nicht aufgenommen. Der Kanal ist reiner Empfang: kein Postfachzugriff, keine IMAP-Verbindung und kein OAuth-Scope für das Postfach, und Cogeto kann im Postfach des Benutzers nichts senden, löschen oder verändern."
+      ],
+      "points": [
+        { "label": "Standardmäßig aus", "text": "Der Dienst für eingehende E-Mail läuft nur, wenn er für das Deployment ausdrücklich aktiviert ist." },
+        { "label": "Nur Empfang", "text": "Weiterleitung hinein ist der einzige Weg; nichts liest oder verändert das Quellpostfach." },
+        { "label": "Absender-Positivliste", "text": "Nur freigegebene Absender können Material in das Wissen weiterleiten." }
+      ]
+    },
+    {
+      "id": "subprocessors",
+      "heading": "Unterauftragsverarbeiter",
+      "excerpt": "Die Liste hängt vom Deployment ab. Eine selbst gehostete oder offline betriebene Instanz kann ganz ohne externe Unterauftragsverarbeiter auskommen.",
+      "body": [
+        "Die Liste der Unterauftragsverarbeiter hängt vom Deployment ab. Eine selbst gehostete oder vollständig offline betriebene Instanz kann ohne externe Unterauftragsverarbeiter jenseits der eigenen Infrastruktur des Kunden auskommen."
+      ],
+      "points": [
+        { "label": "Modell- und Embedding-Inferenz", "text": "Mistral AI, Paris, Frankreich (EU), für die gehostete Standardstufe. Es gelten Optionen europäischer Datenresidenz, die genauen Bedingungen werden je Deployment festgelegt. In einem vollständig isolierten Deployment wird kein externer Modellanbieter genutzt." },
+        { "label": "Hosting und Infrastruktur", "text": "Die vom Betreiber für die Single-Tenant-Instanz gewählte EU-Cloud oder eigene Infrastruktur." }
+      ],
+      "organisational": true
+    },
+    {
+      "id": "regulatory",
+      "heading": "Regulatorische Zuordnung",
+      "excerpt": "Wie die Architektur den technischen Anteil von DSGVO und AI Act belegbar macht, statt ihn zu versprechen.",
+      "body": [
+        "Wir behaupten nicht, dass Architektur allein Compliance darstellt, denn Compliance hat immer auch organisatorische und vertragliche Bestandteile. Wir behaupten, dass diese Architektur den technischen Anteil belegbar macht, statt ihn nur zu behaupten."
+      ],
+      "points": [
+        { "label": "DSGVO Art. 17, Recht auf Löschung", "text": "Das Löschprotokoll und seine hash-verketteten Quittungen geben der betroffenen Person nicht nur die Löschung, sondern auch den Nachweis darüber." },
+        { "label": "DSGVO Art. 25, Datenschutz durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen", "text": "Single-Tenant-Isolation, verpflichtende Herkunftsnachweise, harte Sichtbarkeitsgrenzen, die im Speicher selbst durchgesetzt werden, Verschlüsselung im Ruhezustand und minimaler externer Datenfluss sind Eigenschaften der Architektur, keine Einstellungen darüber." },
+        { "label": "AI Act, Transparenzhaltung", "text": "Das System ist gebaut, um seine Arbeit offenzulegen: ein Quellenlink an jedem Fakt, ein expliziter Status an jeder Aussage, ein Audit-Eintrag zu jeder Aktion, veröffentlichte Prompts und veröffentlichte Genauigkeit auf der Seite der Genauigkeitswerte." }
+      ]
+    }
+  ],
+  "receipt": {
+    "caption": "Eine Beispiel-Löschquittung",
+    "note": "Nur zur Veranschaulichung. Dies ist das fiktive Beispiel aus dem öffentlichen Memory Passport (eine Demo-Persona in der Sandbox). Hash und Signatur sind Platzhalter, keine echte Kryptographie. Eine Quittung aus einer produktiven Instanz trägt eine echte Hash-Kette und eine echte Signatur, die Sie gegen den öffentlichen Instanzschlüssel prüfen können.",
+    "value": {
+      "id": "55555555-5555-4555-8555-555555555555",
+      "source_type": "user_note",
+      "source_id": "note-old",
+      "counts_json": {
+        "requested_by": "ana",
+        "enumerated_at": "2026-06-30T12:00:00.000Z",
+        "memory_count": 2,
+        "object_keys": []
+      },
+      "signed_at": "2026-06-30T12:00:03.000Z",
+      "confirmed_at": "2026-06-30T12:00:03.000Z",
+      "prev_hash": "cogeto:deletion-receipt-chain:genesis",
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "signature": "c2FtcGxlLXBsYWNlaG9sZGVyLXNpZ25hdHVyZS1ub3QtcmVhbA=="
+    }
+  },
+  "links": {
+    "passportSchema": "https://github.com/Cogeto/cogeto/tree/main/docs/passport-schema",
+    "trustScores": "https://github.com/Cogeto/cogeto/tree/main/eval/trust-scores",
+    "repo": "https://github.com/Cogeto/cogeto",
+    "whitepaper": "/documents/cogeto-whitepaper.pdf"
+  },
+  "closing": "Jede Aussage auf dieser Seite entspricht einem Mechanismus im Produkt oder einer Datei im öffentlichen Repository. Lesen Sie das Whitepaper für das vollständige Design, die Seite der Genauigkeitswerte für die gemessene Genauigkeit und den Quellcode für den Code, der all das durchsetzt."
+}

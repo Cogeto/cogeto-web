@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.idea/
+
+# Environment files with secrets (contact form relay); .env.example is the template.
+.env
+.env.local
+.env*.local

@@ -1,0 +1,575 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [8 0 R 10 0 R 12 0 R 14 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 11216 >>
+stream
+0.110 0.129 0.314 rg BT /F2 20 Tf 1 0 0 1 58.00 761.49 Tm (Cogeto) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 741.23 Tm (How Cogeto makes the technical side of compliance demonstrable, not) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 723.68 Tm (asserted) Tj ET
+0.478 0.502 0.678 rg BT /F1 9 Tf 1 0 0 1 58.00 707.41 Tm (Compliance one-pager ∑ Last updated 2026-08-01 ∑ cogeto.eu) Tj ET
+0.129 0.761 0.604 rg 58.00 698.79 479.28 2.00 re f
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 674.84 Tm (Cogeto turns an organisation's documents into verified institutional memory: every fact traced to its source,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 661.06 Tm (verified before it is stored, checked for contradictions against everything else held, and provable to a third party.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 647.29 Tm (Every trust claim is backed by an artifact you can inspect. This one-pager summarises where data lives, how it) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 633.51 Tm (is isolated and protected, how deletion, export, and the signed findings report work, who the subprocessors are,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 619.74 Tm (and how the design maps to EU regulation. Where a control is organisational or contractual rather than) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 605.97 Tm (technical, we say so plainly. Architecture alone is not compliance: it is the part of compliance a system can) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 592.19 Tm (prove.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 557.71 Tm (Who we are) Tj ET
+0.478 0.502 0.678 rg BT /F3 7.6 Tf 1 0 0 1 58.00 542.64 Tm (Organisational or contractual control) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 526.48 Tm (Cogeto is built and operated by MVT Solutions Group d.o.o. and MCTO Advisory d.o.o., both incorporated in) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 512.70 Tm (Croatia, in the European Union.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 491.93 Tm (For a managed deployment, the customer is the data controller and the operating company acts as processor) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 478.16 Tm (on the customer's behalf. For a self-hosted or fully offline deployment, the customer operates the instance itself) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 464.38 Tm (and no operator processing takes place.) Tj ET
+0.129 0.761 0.604 rg 61.00 445.01 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 443.61 Tm (Roles:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 104.34 443.61 Tm (Controller) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 149.08 443.61 Tm (and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 167.95 443.61 Tm (processor) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 213.23 443.61 Tm (roles) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 236.95 443.61 Tm (are) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 253.66 443.61 Tm (fixed) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 276.84 443.61 Tm (per) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 293.56 443.61 Tm (deployment) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 346.39 443.61 Tm (in) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 356.64 443.61 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 372.82 443.61 Tm (data) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 394.39 443.61 Tm (processing) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 443.99 443.61 Tm (agreement.) Tj ET
+0.129 0.761 0.604 rg 61.00 428.23 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 426.83 Tm (Contact:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 114.03 426.83 Tm (hi@cogeto.eu) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 392.35 Tm (Where data lives) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 375.56 Tm (Every deployment is a single isolated instance serving exactly one customer, brought up on EU infrastructure of) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 361.79 Tm (the operator's choosing. There is one composition of application processes, relational database, vector index,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 348.01 Tm (object storage, and edge proxy per customer.) Tj ET
+0.129 0.761 0.604 rg 61.00 328.64 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 327.24 Tm (EU) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 88.17 327.24 Tm (managed) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 133.45 327.24 Tm (cloud:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 165.25 327.24 Tm (Run) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 185.73 327.24 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 199.22 327.24 Tm (EU) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 215.39 327.24 Tm (infrastructure) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 274.68 327.24 Tm (under) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 302.18 327.24 Tm (EU) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 318.35 327.24 Tm (data) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 339.92 327.24 Tm (terms.) Tj ET
+0.129 0.761 0.604 rg 61.00 311.86 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 310.46 Tm (Your) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 96.79 310.46 Tm (servers:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 137.23 310.46 Tm (Self-host) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 178.21 310.46 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 194.38 310.46 Tm (full) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 209.48 310.46 Tm (stack) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 234.81 310.46 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 248.30 310.46 Tm (your) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 269.86 310.46 Tm (own) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 290.35 310.46 Tm (infrastructure.) Tj ET
+0.129 0.761 0.604 rg 61.00 295.09 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 293.69 Tm (Offline) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 105.42 293.69 Tm (bubble:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 143.14 293.69 Tm (Fully) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 166.31 293.69 Tm (isolated,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 205.13 293.69 Tm (local) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 227.77 293.69 Tm (models) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 261.73 293.69 Tm (only,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 284.91 293.69 Tm (nothing) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 319.43 293.69 Tm (leaves) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 350.16 293.69 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 366.34 293.69 Tm (box.) Tj ET
+0.129 0.761 0.604 rg 61.00 278.32 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 276.92 Tm (Model) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 102.72 276.92 Tm (residency:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 153.94 276.92 Tm (The) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 173.35 276.92 Tm (default) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 205.16 276.92 Tm (hosted) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 236.98 276.92 Tm (model) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 266.09 276.92 Tm (provider) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 303.82 276.92 Tm (is) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 313.52 276.92 Tm (European;) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 360.97 276.92 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 377.15 276.92 Tm (model) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 406.26 276.92 Tm (layer) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 429.98 276.92 Tm (can) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 448.31 276.92 Tm (be) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 461.79 276.92 Tm (pointed) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 496.31 276.92 Tm (entirely) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 263.14 Tm (at) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 82.79 263.14 Tm (local) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 105.43 263.14 Tm (models) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 139.39 263.14 Tm (so) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 152.33 263.14 Tm (external) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 189.53 263.14 Tm (model) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 218.63 263.14 Tm (traffic) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 245.05 263.14 Tm (becomes) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 287.10 263.14 Tm (zero.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 228.66 Tm (Isolation model) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 211.87 Tm (Isolation is single-tenant by construction, not a configuration option. Because each customer runs a separate) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 198.09 Tm (instance, there is no shared index, cache, or queue in which one customer's data could ever neighbour) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 184.32 Tm (another's, and no aggregate store whose access control has to be trusted.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 163.55 Tm (We state the residual risk plainly: a compromised host compromises its own instance, as in any single-tenant) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 149.77 Tm (design. The blast radius of that event is one customer, which is precisely the point of the isolation model.) Tj ET
+0.129 0.761 0.604 rg 61.00 130.40 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 129.00 Tm (No) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 87.63 129.00 Tm (co-tenant:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 137.20 129.00 Tm (One) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 158.23 129.00 Tm (customer) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 200.82 129.00 Tm (per) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 217.53 129.00 Tm (instance;) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 259.05 129.00 Tm (no) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 272.53 129.00 Tm (cross-tenant) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 328.59 129.00 Tm (data) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 350.17 129.00 Tm (path) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 371.74 129.00 Tm (exists) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 399.23 129.00 Tm (to) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 410.02 129.00 Tm (secure.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 94.52 Tm (Encryption in transit and at rest) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 77.72 Tm (In transit, transport security terminates at the instance's edge proxy, and every application endpoint requires) Tj ET
+0.478 0.502 0.678 rg 58 52 479.28 0.6 re f
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 58 40 Tm (Cogeto: Compliance one-pager) Tj ET
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 496.36 40 Tm (Page 1 of 4) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 9330 >>
+stream
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 769.94 Tm (authentication before it will answer.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 749.16 Tm (At rest, original documents are encrypted in object storage and on the host's volumes, and connector) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 735.39 Tm (credentials are additionally encrypted at the application layer before they are stored.) Tj ET
+0.129 0.761 0.604 rg 61.00 716.01 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 714.61 Tm (Key) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 92.49 714.61 Tm (handling:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 138.83 714.61 Tm (Object-storage) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 205.14 714.61 Tm (keys) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 227.78 714.61 Tm (are) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 244.50 714.61 Tm (scoped) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 278.46 714.61 Tm (by) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 291.40 714.61 Tm (organisation,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 349.63 714.61 Tm (user,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 373.89 714.61 Tm (and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 392.77 714.61 Tm (visibility,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 431.57 714.61 Tm (and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 450.45 714.61 Tm (originals) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 489.26 714.61 Tm (are) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 700.84 Tm (reachable) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 117.29 700.84 Tm (only) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 137.78 700.84 Tm (through) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 173.37 700.84 Tm (short-lived) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 220.80 700.84 Tm (signed) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 252.07 700.84 Tm (URLs) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 279.02 700.84 Tm (gated) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 305.98 700.84 Tm (by) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 318.92 700.84 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 335.10 700.84 Tm (sensitivity) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 379.84 700.84 Tm (flag.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 666.36 Tm (Verifiable deletion) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 649.57 Tm (A deletion receipt is a fileable, verifiable proof that a deletion happened and exactly what it removed. Deleting a) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 635.79 Tm (source runs a five-step compensating protocol across the relational store, the vector index, and object storage,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 622.02 Tm (and ends in a signed receipt.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 601.24 Tm (Each receipt records the source, the counts of memories, vector points, and bytes removed, and the pending) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 587.47 Tm (and confirmed timestamps. It is signed with the instance key and chained to its predecessor, so no receipt can) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 573.70 Tm (later be altered or excised without breaking the chain. A nightly sweep re-verifies that nothing deleted still) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 559.92 Tm (exists, which upgrades each receipt from a record of intent into a continuously re-verified statement of fact.) Tj ET
+0.960 0.965 0.984 rg 58.00 491.30 479.28 55.80 re f
+0.129 0.761 0.604 rg 58.00 491.30 2.40 55.80 re f
+0.110 0.129 0.314 rg BT /F2 9 Tf 1 0 0 1 71.00 530.72 Tm (Honest limitation.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9 Tf 1 0 0 1 146.51 530.72 Tm ( Receipts prove removal from the system's own stores. They cannot retroactively unsend content) Tj ET
+0.200 0.220 0.340 rg BT /F1 9 Tf 1 0 0 1 71.00 518.12 Tm (already processed by an external model provider under that provider's terms, which is exactly why deletion is) Tj ET
+0.200 0.220 0.340 rg BT /F1 9 Tf 1 0 0 1 71.00 505.52 Tm (paired with the local-model isolation option that bounds what leaves the instance in the first place.) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.5 Tf 1 0 0 1 58.00 474.92 Tm (A sample deletion receipt) Tj ET
+0.078 0.094 0.200 rg 58.00 264.90 479.28 202.40 re f
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 451.07 Tm ({) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 439.67 Tm (  "id": "55555555-5555-4555-8555-555555555555",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 428.27 Tm (  "source_type": "user_note",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 416.87 Tm (  "source_id": "note-old",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 405.47 Tm (  "counts_json": {) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 394.07 Tm (    "requested_by": "ana",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 382.67 Tm (    "enumerated_at": "2026-06-30T12:00:00.000Z",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 371.27 Tm (    "memory_count": 2,) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 359.87 Tm (    "object_keys": []) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 348.47 Tm (  },) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 337.07 Tm (  "signed_at": "2026-06-30T12:00:03.000Z",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 325.67 Tm (  "confirmed_at": "2026-06-30T12:00:03.000Z",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 314.27 Tm (  "prev_hash": "cogeto:deletion-receipt-chain:genesis",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 302.87 Tm (  "hash": "0000000000000000000000000000000000000000000000000000000000000000",) Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 291.47 Tm (  "signature": "c2FtcGxlLXBsYWNlaG9sZGVyLXNpZ25hdHVyZS1ub3QtcmVhbA==") Tj ET
+0.92 0.94 0.98 rg BT /F4 7.6 Tf 1 0 0 1 68.00 280.07 Tm (}) Tj ET
+0.478 0.502 0.678 rg BT /F3 8.6 Tf 1 0 0 1 58.00 249.85 Tm (Illustrative only. This is the fictional sample from the public Memory Passport \(a demo persona in the sandbox\). Its hash and) Tj ET
+0.478 0.502 0.678 rg BT /F3 8.6 Tf 1 0 0 1 58.00 237.81 Tm (signature are placeholders, not real cryptography. A receipt from a live instance carries a real hash chain and a real signature) Tj ET
+0.478 0.502 0.678 rg BT /F3 8.6 Tf 1 0 0 1 58.00 225.77 Tm (you can verify against the instance public key.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 190.12 Tm (Data export: the Memory Passport) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 173.33 Tm (There is no lock-in. Any user can export everything they hold, from facts and their statuses to sources, full) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 159.55 Tm (validity history, and deletion receipts, as a single signed archive in an open, documented, versioned format.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 138.78 Tm (The format is published in full. A Passport can be read and its integrity verified with only the public schemas) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 125.01 Tm (and the instance public key inside the archive, with no Cogeto code or service required.) Tj ET
+0.129 0.761 0.604 rg 61.00 105.63 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 104.23 Tm (Open) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 99.49 104.23 Tm (format:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 135.59 104.23 Tm (A) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 144.76 104.23 Tm (single) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 172.79 104.23 Tm (.zip) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 190.58 104.23 Tm (with) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 210.53 104.23 Tm (per-document) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 273.06 104.23 Tm (JSON,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 304.32 104.23 Tm (each) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 328.05 104.23 Tm (covered) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 365.25 104.23 Tm (by) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 378.19 104.23 Tm (a) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 386.28 104.23 Tm (public) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 414.31 104.23 Tm (JSON) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 442.88 104.23 Tm (Schema,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 483.85 104.23 Tm (plus) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 504.34 104.23 Tm (a) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 90.46 Tm (detached) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 114.60 90.46 Tm (signature) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 157.20 90.46 Tm (over) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 178.76 90.46 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 194.94 90.46 Tm (manifest.) Tj ET
+0.051 0.490 0.380 rg BT /F1 8.8 Tf 1 0 0 1 58.00 71.42 Tm (Published schema: https://github.com/Cogeto/cogeto/tree/main/docs/passport-schema) Tj ET
+0.478 0.502 0.678 rg 58 52 479.28 0.6 re f
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 58 40 Tm (Cogeto: Compliance one-pager) Tj ET
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 496.36 40 Tm (Page 2 of 4) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 9 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 20048 >>
+stream
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 761.23 Tm (The signed findings report) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 744.44 Tm (A findings report is a signed, printable record produced over an explicitly selected set of sources. Its header) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 730.66 Tm (states the instance, the corpus scope, the date range, the model configuration, and that configuration's) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 716.89 Tm (measured trust scores, so the artifact declares the accuracy of the system that produced it.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 696.11 Tm (Each contradiction appears with both claims, both verbatim source sentences, the document with revision and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 682.34 Tm (location for each side, the detection date, and the resolution status. Superseded statements appear with their) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 668.57 Tm (chains, and a summary of what verification rejected follows. Findings that reference a document outside the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 654.79 Tm (selected scope appear in a clearly labelled boundary section rather than being silently included or dropped.) Tj ET
+0.129 0.761 0.604 rg 61.00 635.42 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 634.02 Tm (Two) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 94.10 634.02 Tm (formats:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 135.59 634.02 Tm (PDF) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 157.69 634.02 Tm (for) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 171.71 634.02 Tm (people,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 206.22 634.02 Tm (JSON) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 234.79 634.02 Tm (for) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 248.80 634.02 Tm (quality) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 279.53 634.02 Tm (systems,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 320.49 634.02 Tm (both) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 342.07 634.02 Tm (signed) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 373.34 634.02 Tm (through) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 408.93 634.02 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 425.11 634.02 Tm (same) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 451.52 634.02 Tm (path) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 473.09 634.02 Tm (as) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 486.03 634.02 Tm (deletion) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 620.24 Tm (receipts.) Tj ET
+0.129 0.761 0.604 rg 61.00 604.87 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 603.47 Tm (Defined) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 110.27 603.47 Tm (scope:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 144.23 603.47 Tm (The) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 163.64 603.47 Tm (signature) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 206.23 603.47 Tm (covers) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 237.49 603.47 Tm (an) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 250.97 603.47 Tm (explicitly) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 290.32 603.47 Tm (selected) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 329.14 603.47 Tm (document) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 374.43 603.47 Tm (set,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 392.76 603.47 Tm (so) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 405.70 603.47 Tm (what) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 428.88 603.47 Tm (was) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 448.83 603.47 Tm (audited) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 483.34 603.47 Tm (is) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 493.04 603.47 Tm (part) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 512.45 603.47 Tm (of) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 523.23 603.47 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 589.70 Tm (record.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 555.22 Tm (How Cogeto receives email) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 538.42 Tm (Inbound email is disabled by default and enabled per deployment only when the customer wants it. When) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 524.65 Tm (enabled, email enters Cogeto by forwarding only: the deployment exposes a dedicated inbound address, and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 510.87 Tm (the user or their mail system forwards messages to it. Cogeto never connects to a mailbox.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 490.10 Tm (A sender allowlist controls which senders may forward material in; messages from senders that are not on the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 476.33 Tm (allowlist are not ingested. The channel is receive-only: there is no inbox access, no IMAP connection, and no) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 462.55 Tm (mailbox OAuth scope, and Cogeto cannot send, delete, or modify anything in the user's mailbox.) Tj ET
+0.129 0.761 0.604 rg 61.00 443.18 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 441.78 Tm (Off) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 88.70 441.78 Tm (by) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 102.72 441.78 Tm (default:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 140.44 441.78 Tm (The) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 159.85 441.78 Tm (inbound) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 197.06 441.78 Tm (email) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 222.93 441.78 Tm (service) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 256.35 441.78 Tm (runs) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 277.91 441.78 Tm (only) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 298.40 441.78 Tm (when) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 324.28 441.78 Tm (explicitly) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 363.62 441.78 Tm (enabled) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 400.83 441.78 Tm (for) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 414.85 441.78 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 431.03 441.78 Tm (deployment.) Tj ET
+0.129 0.761 0.604 rg 61.00 426.40 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 425.00 Tm (Receive-only:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 137.77 425.00 Tm (Forwarding) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 188.97 425.00 Tm (in) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 199.22 425.00 Tm (is) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 208.92 425.00 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 225.10 425.00 Tm (only) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 245.58 425.00 Tm (path;) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 269.85 425.00 Tm (nothing) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 304.36 425.00 Tm (reads) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 331.32 425.00 Tm (or) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 342.64 425.00 Tm (writes) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 370.66 425.00 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 386.84 425.00 Tm (source) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 418.65 425.00 Tm (mailbox.) Tj ET
+0.129 0.761 0.604 rg 61.00 409.63 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 408.23 Tm (Sender) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 107.58 408.23 Tm (allowlist:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 151.78 408.23 Tm (Only) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 174.42 408.23 Tm (approved) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 217.56 408.23 Tm (senders) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 254.76 408.23 Tm (can) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 273.09 408.23 Tm (forward) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 308.13 408.23 Tm (material) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 345.32 408.23 Tm (into) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 363.65 408.23 Tm (memory.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 373.75 Tm (Subprocessors) Tj ET
+0.478 0.502 0.678 rg BT /F3 7.6 Tf 1 0 0 1 58.00 358.68 Tm (Organisational or contractual control) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 342.52 Tm (The subprocessor list depends on the deployment. A self-hosted or fully offline instance may have no external) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 328.74 Tm (subprocessors beyond the customer's own infrastructure.) Tj ET
+0.129 0.761 0.604 rg 61.00 309.37 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 307.97 Tm (Model) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 102.72 307.97 Tm (and) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 122.66 307.97 Tm (embedding) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 177.10 307.97 Tm (inference:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 226.15 307.97 Tm (Mistral) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 257.41 307.97 Tm (AI,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 271.97 307.97 Tm (Paris,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 299.46 307.97 Tm (France) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 332.34 307.97 Tm (\(EU\),) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 357.66 307.97 Tm (for) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 371.68 307.97 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 387.86 307.97 Tm (default) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 419.68 307.97 Tm (hosted) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 451.49 307.97 Tm (tier.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 470.36 307.97 Tm (European) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 515.12 307.97 Tm (data) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 294.19 Tm (residency) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 116.20 294.19 Tm (options) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 150.17 294.19 Tm (apply,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 178.75 294.19 Tm (with) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 198.69 294.19 Tm (exact) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 224.57 294.19 Tm (terms) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 251.52 294.19 Tm (set) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 267.15 294.19 Tm (per) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 283.87 294.19 Tm (deployment.) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 339.40 294.19 Tm (In) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 350.19 294.19 Tm (a) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 358.28 294.19 Tm (fully) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 378.22 294.19 Tm (isolated) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 414.34 294.19 Tm (deployment) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 467.18 294.19 Tm (no) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 480.66 294.19 Tm (external) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 280.42 Tm (model) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 101.11 280.42 Tm (provider) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 138.84 280.42 Tm (is) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 148.54 280.42 Tm (used.) Tj ET
+0.129 0.761 0.604 rg 61.00 265.05 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 263.65 Tm (Hosting) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 110.80 263.65 Tm (and) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 130.74 263.65 Tm (infrastructure:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 199.73 263.65 Tm (The) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 219.14 263.65 Tm (EU) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 235.31 263.65 Tm (cloud) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 261.19 263.65 Tm (or) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 272.51 263.65 Tm (on-premise) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 323.71 263.65 Tm (infrastructure) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 383.01 263.65 Tm (chosen) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 416.98 263.65 Tm (by) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 429.92 263.65 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 446.10 263.65 Tm (operator) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 484.92 263.65 Tm (for) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 498.94 263.65 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 249.87 Tm (single-tenant) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 130.23 249.87 Tm (instance.) Tj ET
+0.110 0.129 0.314 rg BT /F2 13 Tf 1 0 0 1 58.00 215.39 Tm (Regulatory mapping) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 198.60 Tm (We do not claim that architecture alone constitutes compliance, which always also has organisational and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 184.82 Tm (contractual components. We claim that this architecture makes the technical share demonstrable rather than) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 58.00 171.05 Tm (asserted.) Tj ET
+0.129 0.761 0.604 rg 61.00 151.68 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 150.28 Tm (GDPR) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 102.72 150.28 Tm (Article) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 135.60 150.28 Tm (17,) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 151.78 150.28 Tm (right) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 176.03 150.28 Tm (to) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 187.89 150.28 Tm (erasure:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 228.86 150.28 Tm (The) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 248.27 150.28 Tm (deletion) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 284.93 150.28 Tm (protocol) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 322.13 150.28 Tm (and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 341.01 150.28 Tm (its) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 353.41 150.28 Tm (hash-chained) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 414.33 150.28 Tm (receipts) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 450.99 150.28 Tm (give) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 471.48 150.28 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 487.65 150.28 Tm (data) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 136.50 Tm (subject) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 105.43 136.50 Tm (not) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 121.61 136.50 Tm (only) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 142.09 136.50 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 158.27 136.50 Tm (deletion) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 194.94 136.50 Tm (but) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 211.12 136.50 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 227.30 136.50 Tm (evidence) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 268.81 136.50 Tm (of) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 279.60 136.50 Tm (it.) Tj ET
+0.129 0.761 0.604 rg 61.00 121.13 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 119.73 Tm (GDPR) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 102.72 119.73 Tm (Article) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 135.60 119.73 Tm (25,) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 151.78 119.73 Tm (data) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 174.42 119.73 Tm (protection) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 224.54 119.73 Tm (by) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 238.56 119.73 Tm (design) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 272.52 119.73 Tm (and) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 292.46 119.73 Tm (by) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 306.48 119.73 Tm (default:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 344.20 119.73 Tm (Single-tenant) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 404.05 119.73 Tm (isolation,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 445.02 119.73 Tm (mandatory) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 105.95 Tm (provenance,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 128.08 105.95 Tm (hard) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 150.18 105.95 Tm (visibility) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 186.29 105.95 Tm (gates) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 212.71 105.95 Tm (evaluated) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 257.46 105.95 Tm (inside) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 285.50 105.95 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 301.68 105.95 Tm (store,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 328.63 105.95 Tm (encryption) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 376.08 105.95 Tm (at) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 386.86 105.95 Tm (rest,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 408.43 105.95 Tm (and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 427.30 105.95 Tm (minimal) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 463.40 105.95 Tm (external) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 500.60 105.95 Tm (data) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 92.18 Tm (flow) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 91.94 92.18 Tm (are) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 108.66 92.18 Tm (properties) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 154.48 92.18 Tm (of) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 165.27 92.18 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 181.45 92.18 Tm (architecture,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 237.51 92.18 Tm (not) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 253.69 92.18 Tm (settings) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 289.81 92.18 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 303.30 92.18 Tm (top) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 319.48 92.18 Tm (of) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 330.26 92.18 Tm (it.) Tj ET
+0.129 0.761 0.604 rg 61.00 76.81 2.60 2.60 re f
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 72.00 75.41 Tm (AI) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 84.40 75.41 Tm (Act,) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 105.42 75.41 Tm (transparency) Tj ET
+0.110 0.129 0.314 rg BT /F2 9.7 Tf 1 0 0 1 169.03 75.41 Tm (posture:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 210.53 75.41 Tm (The) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 229.94 75.41 Tm (system) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 263.35 75.41 Tm (is) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 273.05 75.41 Tm (built) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 293.54 75.41 Tm (to) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 304.32 75.41 Tm (show) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 329.66 75.41 Tm (its) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 342.06 75.41 Tm (work:) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 367.93 75.41 Tm (a) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 376.02 75.41 Tm (source) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 407.82 75.41 Tm (link) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 425.07 75.41 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 438.55 75.41 Tm (every) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 464.97 75.41 Tm (fact,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 486.00 75.41 Tm (an) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 499.48 75.41 Tm (explicit) Tj ET
+0.478 0.502 0.678 rg 58 52 479.28 0.6 re f
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 58 40 Tm (Cogeto: Compliance one-pager) Tj ET
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 496.36 40 Tm (Page 3 of 4) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 11 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> >>
+endobj
+13 0 obj
+<< /Length 2322 >>
+stream
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 769.94 Tm (status) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 100.58 769.94 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 114.06 769.94 Tm (every) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 140.47 769.94 Tm (belief,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 169.05 769.94 Tm (an) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 182.53 769.94 Tm (audit) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 206.26 769.94 Tm (record) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 236.44 769.94 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 249.93 769.94 Tm (every) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 276.34 769.94 Tm (action,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 307.61 769.94 Tm (published) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 351.83 769.94 Tm (prompts,) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 392.26 769.94 Tm (and) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 411.13 769.94 Tm (published) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 455.34 769.94 Tm (accuracy) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 496.85 769.94 Tm (on) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 510.33 769.94 Tm (the) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 72.00 756.16 Tm (trust-score) Tj ET
+0.200 0.220 0.340 rg BT /F1 9.7 Tf 1 0 0 1 120.51 756.16 Tm (page.) Tj ET
+0.051 0.490 0.380 rg BT /F1 8.8 Tf 1 0 0 1 58.00 737.13 Tm (Live trust score: cogeto.eu/trust) Tj ET
+0.110 0.129 0.314 rg BT /F3 9.5 Tf 1 0 0 1 58.00 708.06 Tm (Every claim on this page corresponds to a mechanism in the product or a file in the public repository. Read the) Tj ET
+0.110 0.129 0.314 rg BT /F3 9.5 Tf 1 0 0 1 58.00 694.57 Tm (whitepaper for the full design, the trust-score page for measured accuracy, and the source for the code that) Tj ET
+0.110 0.129 0.314 rg BT /F3 9.5 Tf 1 0 0 1 58.00 681.08 Tm (enforces all of it.) Tj ET
+0.478 0.502 0.678 rg BT /F1 8.6 Tf 1 0 0 1 58.00 662.32 Tm (Whitepaper: cogeto.eu/documents/cogeto-whitepaper.pdf Source: https://github.com/Cogeto/cogeto) Tj ET
+0.478 0.502 0.678 rg 58 52 479.28 0.6 re f
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 58 40 Tm (Cogeto: Compliance one-pager) Tj ET
+0.478 0.502 0.678 rg BT /F1 8 Tf 1 0 0 1 496.36 40 Tm (Page 4 of 4) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 13 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000142 00000 n 
+0000000239 00000 n 
+0000000341 00000 n 
+0000000446 00000 n 
+0000000541 00000 n 
+0000011810 00000 n 
+0000011972 00000 n 
+0000021354 00000 n 
+0000021517 00000 n 
+0000041619 00000 n 
+0000041783 00000 n 
+0000044158 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+44322
+%%EOF

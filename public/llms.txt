@@ -1,0 +1,42 @@
+# Cogeto
+
+> Cogeto (cogeto.eu) turns an organization's documents into verified, provable institutional memory. It reads document sets including scans, verifies every extracted fact against its own source sentence before storing it, reports where documents contradict each other, and produces a signed findings report a third party can verify. It runs EU-hosted, self-hosted, or fully offline inside a closed network. Built in Croatia, EU. Open source under AGPLv3.
+
+Key facts:
+- Tagline: Models are rented. Knowledge is owned.
+- Category: verified institutional memory for documents; contradiction findings between documents are the lead capability.
+- Core capabilities: contradiction findings (both claims, both source sentences, both documents with revisions, detection date), verification before storage (nothing enters memory unverified; rejected extractions land in an inspectable suppressed fact log), a signed findings report (PDF for people, JSON for quality systems), answers with per-claim citations and honest silence where the corpus is silent, time travel (what was believed at any date, superseded facts kept with their chains), deletion receipts (signed, hash-chained, re-verified nightly), Memory Passport (complete signed export in an open format, no lock-in).
+- Sources: PDFs, Word files, spreadsheets, scans through local recognition, photographed notes, mail with attachments, bulk import of whole folders, and connectors to systems such as Jira, Google, Microsoft, Slack, and Teams.
+- Sovereignty: one instance per customer, EU hosted or self hosted or fully offline with local models, no telemetry, sensitive entities pseudonymized locally before any external model call, customer knowledge never used as training data.
+- Company: built by MVT Solutions Group d.o.o. and MCTO Advisory d.o.o., Croatia, EU. MVT Solutions Group is ISO 9001 and ISO 27001 certified.
+- Trust: measured accuracy is published for every release, per language and per model configuration, including numbers below target, at https://cogeto.eu/trust, with links to the immutable public data files behind every number.
+- Compliance: EU hosting, isolation, verifiable deletion, the signed findings report, open export, and the GDPR and AI Act mapping are documented at https://cogeto.eu/compliance, with a downloadable one-pager PDF.
+- Getting started: a pilot on the customer's own documents, ending in the findings report, via hi@cogeto.eu; there is no self-serve signup. Self hosting is public and documented at https://github.com/Cogeto/cogeto.
+- Privacy: the website uses no cookies, no analytics, and collects no personal data.
+- Status: open source and publicly available under AGPLv3, with a commercial license (an AGPL exemption) available.
+
+## Documents
+
+- [Whitepaper (PDF)](https://cogeto.eu/documents/cogeto-whitepaper.pdf): Cogeto: A Verifiable, Sovereignty-First Memory Architecture for Large Language Model Assistants. Working paper, 29 July 2026.
+- [Compliance one-pager (PDF)](https://cogeto.eu/documents/cogeto-compliance-onepager.pdf): where data lives, how deletion, export, and the findings report work, and the EU regulatory mapping.
+
+## Links
+
+- [Website](https://cogeto.eu)
+- [Case studies](https://cogeto.eu/case-studies): medical devices, defense, automotive paint shops, and engineering teams, told as illustrative runs with the findings the engine detects.
+- [Contradiction findings](https://cogeto.eu/product/contradiction-findings)
+- [Verified memory](https://cogeto.eu/product/verified-memory)
+- [The findings report](https://cogeto.eu/product/findings-report)
+- [Security and sovereignty](https://cogeto.eu/security)
+- [Trust scores](https://cogeto.eu/trust): measured accuracy per release, with the public data files.
+- [Open source](https://cogeto.eu/open-source)
+- [Compliance](https://cogeto.eu/compliance)
+- [Get started](https://cogeto.eu/get-started)
+- [Source code on GitHub](https://github.com/Cogeto/cogeto)
+- [Privacy policy](https://cogeto.eu/privacy)
+- [Imprint](https://cogeto.eu/imprint)
+
+## Contact
+
+- Email: hi@cogeto.eu
+- Built by MVT Solutions Group and MCTO Advisory, Croatia, EU.

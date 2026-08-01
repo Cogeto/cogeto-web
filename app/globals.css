@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette mirrored from the product repo (project/web/src/index.css).
+     Colors referenced, assets untouched — see public/brand/README.md. */
+  --color-brand-navy: #1c2150;
+  --color-brand-teal: #21c29a;
+  --color-brand-navy-deep: #141833;
+  /* Muted ink from the brand animation reference. */
+  --color-brand-muted: #7a80ad;
+  /* Bright surface tones matching the animation's background gradient. */
+  --color-surface: #f5f6fb;
+  --color-surface-deep: #eef0f8;
+  /* Teal is too light for small text on white at AA; this darker step passes. */
+  --color-brand-teal-ink: #0d7d61;
+
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+
+  /* Type scale: few sizes, tight display tracking, generous body leading.
+     Use these named steps for headings instead of ad hoc text-4xl/5xl:
+     text-display  page hero headline, one per page
+     text-headline section headline
+     text-title    card or subsection title */
+  --text-display: 3.25rem;
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.022em;
+  --text-display--font-weight: 600;
+  --text-headline: 2rem;
+  --text-headline--line-height: 1.15;
+  --text-headline--letter-spacing: -0.015em;
+  --text-headline--font-weight: 600;
+  --text-title: 1.1875rem;
+  --text-title--line-height: 1.35;
+  --text-title--font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: white;
+  color: var(--color-brand-navy);
+}
+
+::selection {
+  background-color: var(--color-brand-teal);
+  color: var(--color-brand-navy-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-teal-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- How-it-works flow diagram ------------------------------------------ */
+/* 10s loop over five stages: each stage lights up in turn while a pulse dot
+   travels the connector toward the next stage. Fully static under reduced
+   motion. */
+.flow-stage {
+  animation: flow-stage 10s ease-in-out infinite;
+}
+
+.flow-stage-2 { animation-delay: 2s; }
+.flow-stage-3 { animation-delay: 4s; }
+.flow-stage-4 { animation-delay: 6s; }
+.flow-stage-5 { animation-delay: 8s; }
+
+.flow-dot {
+  opacity: 0;
+  animation: flow-dot 10s linear infinite;
+}
+
+.flow-dot-2 { animation-delay: 2s; }
+.flow-dot-3 { animation-delay: 4s; }
+.flow-dot-4 { animation-delay: 6s; }
+
+@keyframes flow-stage {
+  0%, 28%, 100% {
+    border-color: color-mix(in srgb, var(--color-brand-navy) 10%, transparent);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  6%, 20% {
+    border-color: color-mix(in srgb, var(--color-brand-teal) 60%, transparent);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-brand-teal) 22%, transparent);
+  }
+}
+
+@keyframes flow-dot {
+  0%, 15% {
+    left: 0%;
+    opacity: 0;
+  }
+  17% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 1;
+  }
+  28%, 100% {
+    left: calc(100% - 0.625rem);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-stage,
+  .flow-dot {
+    animation: none;
+  }
+  .flow-dot {
+    opacity: 0;
+  }
+}
+
+/* --- Hero ambient accent ------------------------------------------------ */
+.hero-blob {
+  animation: hero-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-blob-2 {
+  animation-duration: 24s;
+  animation-delay: -8s;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: translate3d(-4%, -3%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5%, 4%, 0) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none;
+  }
+}
+
+/* --- Hero scene fragments ----------------------------------------------- */
+/* Gentle idle bob for the scattered chips. Animates transform only, which
+   composes with the Tailwind translate property used for centering. */
+.hero-frag-float {
+  animation: hero-frag-float 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes hero-frag-float {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-frag-float {
+    animation: none;
+  }
+}
+
+/* --- Bento promise tiles -------------------------------------------------- */
+/* Mini product vignettes: each loop replays its "arrival" quickly, then rests
+   in the final state for most of the cycle (people scan fast). The markup's
+   default styling IS the final state, so removing the animation under reduced
+   motion leaves every tile complete and readable. Transform/opacity only. */
+.bento-drift,
+.bento-pop,
+.bento-type,
+.bento-fade,
+.bento-tick,
+.bento-lift,
+.bento-strike {
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.bento-drift {
+  animation-name: bento-drift;
+  animation-duration: 4s;
+}
+
+.bento-pop {
+  animation-name: bento-pop;
+}
+
+.bento-type {
+  animation-name: bento-type;
+}
+
+.bento-blink {
+  animation: bento-blink 1.1s step-end infinite;
+}
+
+.bento-fade {
+  animation-name: bento-fade;
+}
+
+.bento-tick {
+  animation-name: bento-tick;
+}
+
+.bento-lift {
+  animation-name: bento-lift;
+}
+
+.bento-strike {
+  animation-name: bento-strike;
+}
+
+@keyframes bento-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes bento-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.92);
+  }
+  8%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bento-type {
+  0% {
+    transform: scaleX(0);
+  }
+  25%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bento-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes bento-fade {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  32%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bento-tick {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  10%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bento-lift {
+  0% {
+    opacity: 0.5;
+    transform: translateY(6px);
+  }
+  20%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bento-strike {
+  0% {
+    transform: scaleX(0);
+  }
+  15%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-drift,
+  .bento-pop,
+  .bento-type,
+  .bento-blink,
+  .bento-fade,
+  .bento-tick,
+  .bento-lift,
+  .bento-strike {
+    animation: none;
+  }
+}
+
+/* --- Chat demo ----------------------------------------------------------- */
+.chat-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-left: 1px;
+  background: var(--color-brand-navy);
+  vertical-align: text-bottom;
+  animation: chat-blink 0.9s step-end infinite;
+}
+.chat-dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-brand-teal-ink);
+  animation: chat-dot 1.1s ease-in-out infinite;
+}
+.chat-dots span:nth-child(2) { animation-delay: 0.18s; }
+.chat-dots span:nth-child(3) { animation-delay: 0.36s; }
+.chip-pop {
+  animation: chip-pop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes chat-blink { 50% { opacity: 0; } }
+@keyframes chat-dot {
+  0%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-2px); }
+}
+@keyframes chip-pop {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-cursor, .chat-dots span, .chip-pop { animation: none; }
+}
