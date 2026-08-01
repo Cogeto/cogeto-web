@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Github, Menu, X } from "lucide-react";
 import type { NavContent } from "@/content/types";
 import type { Locale } from "@/lib/i18n";
-import { localeHref, locales } from "@/lib/i18n";
+import { localeHref, locales, prefixedLocales } from "@/lib/i18n";
 
 /**
  * discover). Disclosure dropdowns render from nav.groups, so adding a group
@@ -23,9 +23,12 @@ const LOCALE_NAMES: Record<Locale, string> = {
   de: "Deutsch",
 };
 
-/** Target for locale `l`: the current path with only the prefix swapped. */
+/** Target for locale `l`: the current path with only the prefix swapped.
+ * The prefix set derives from the locale list so a new locale can never
+ * be missed here again. */
+const PREFIX_RE = new RegExp(`^/(${prefixedLocales.join("|")})(?=/|$)`);
 function switchTarget(l: Locale, pathname: string): string {
-  const basePath = pathname.replace(/^\/(hr|de)(?=\/|$)/, "") || "/";
+  const basePath = pathname.replace(PREFIX_RE, "") || "/";
   return localeHref(l, basePath);
 }
 
