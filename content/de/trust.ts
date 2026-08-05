@@ -40,6 +40,34 @@ export interface TrustContent {
   goldenCasesStatLabel: string;
   unavailableTitle: string;
   unavailableBody: string;
+  /** Release picker label and the badge on the newest entry. */
+  releaseLabel: string;
+  latestBadge: string;
+  /** The compare-by control and its four modes. */
+  compareLabel: string;
+  compareNone: string;
+  compareReleases: string;
+  compareModels: string;
+  compareLanguages: string;
+  compareHint: string;
+  /** Two-way comparison delta column heading and percentage-point unit. */
+  deltaHeading: string;
+  pointsUnit: string;
+  /** Screen-reader tag on the best value in a side-by-side row. */
+  highestLabel: string;
+  /** A metric published as null: the run had no cases to measure. */
+  noCasesLabel: string;
+  /** Cell and hint templates around data a release does not carry. */
+  notMeasuredInLabel: string;
+  configCoverageNote: string;
+  v11Note: string;
+  viewReleaseCta: string;
+  /** Table and chat labels that previously lived hardcoded in markup. */
+  metricColLabel: string;
+  casesPassLabel: string;
+  failingCasesLabel: string;
+  releaseNotesHeading: string;
+  measuredAtLabel: string;
 }
 
 export const trust: TrustContent = {
@@ -130,4 +158,27 @@ export const trust: TrustContent = {
   unavailableTitle: "Genauigkeitswerte werden aktualisiert",
   unavailableBody:
     "Die veröffentlichten Daten konnten gerade nicht gelesen werden. Diese Seite aktualisiert sich innerhalb einer Stunde aus dem Produkt-Repository. Schauen Sie in Kürze wieder vorbei oder lesen Sie die Dateien direkt auf GitHub.",
+  releaseLabel: "Release",
+  latestBadge: "aktuell",
+  compareLabel: "Vergleich",
+  compareNone: "Einzelansicht",
+  compareReleases: "Releases",
+  compareModels: "Modelle",
+  compareLanguages: "Sprachen",
+  compareHint: "Wählen Sie bis zu drei für die Ansicht nebeneinander.",
+  deltaHeading: "Veränderung",
+  pointsUnit: "Pp.",
+  highestLabel: "höchster Wert",
+  noCasesLabel: "keine Fälle in diesem Lauf",
+  notMeasuredInLabel: "In {version} nicht gemessen",
+  configCoverageNote:
+    "{config} wurde in {n} von {m} geladenen Releases gemessen, erstmals in {version}.",
+  v11Note:
+    "Widerspruchspräzision, Ablösungsgenauigkeit und Umformulierungs-Routing-Genauigkeit werden ab Schema 1.1 veröffentlicht, erstmals gemessen in {version}.",
+  viewReleaseCta: "{version} anzeigen",
+  metricColLabel: "Metrik",
+  casesPassLabel: "Fälle bestehen",
+  failingCasesLabel: "IDs fehlgeschlagener Fälle:",
+  releaseNotesHeading: "Anmerkungen aus den Releases",
+  measuredAtLabel: "Beim Release gemessen",
 };

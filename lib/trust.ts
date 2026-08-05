@@ -521,6 +521,85 @@ export function metricValue(
   return row[key] ?? null;
 }
 
+/**
+ * A table cell in the explorer, keeping the three kinds of "no number"
+ * distinct so the page can say why a number is missing instead of a generic
+ * dash of ignorance:
+ * - "absent": never published for this selection (the configuration or
+ *   language is not in the release, or the file predates the metric's schema).
+ * - "unmeasured": published as null, meaning the run had no cases to measure.
+ * - "value": a real measured number.
+ */
+export type MetricCell =
+  | { kind: "value"; value: number }
+  | { kind: "unmeasured" }
+  | { kind: "absent" };
+
+export function metricCell(
+  config: Configuration | undefined,
+  language: string,
+  key: MetricKey,
+): MetricCell {
+  if (!config) return { kind: "absent" };
+  if (language === "aggregate") {
+    const v = config.metrics.aggregate[key];
+    return v === undefined ? { kind: "absent" } : { kind: "value", value: v };
+  }
+  const row = config.metrics.per_language.find((l) => l.language === language);
+  if (!row) return { kind: "absent" };
+  const v = row[key];
+  if (v === undefined) return { kind: "absent" };
+  if (v === null) return { kind: "unmeasured" };
+  return { kind: "value", value: v };
+}
+
+/**
+ * How widely a configuration is covered by the loaded releases: the count it
+ * appears in, the total loaded, and the versions of its oldest and newest
+ * appearances (releases arrive newest first). Used to disclose sparsity up
+ * front, e.g. a configuration first measured in the latest release.
+ */
+export function configCoverage(
+  releases: LoadedRelease[],
+  configId: string,
+): { measured: number; total: number; first: string | null; latest: string | null } {
+  let measured = 0;
+  let first: string | null = null;
+  let latest: string | null = null;
+  for (const r of releases) {
+    if (r.release.configurations.some((c) => c.id === configId)) {
+      measured += 1;
+      if (latest === null) latest = r.version;
+      first = r.version;
+    }
+  }
+  return { measured, total: releases.length, first, latest };
+}
+
+/**
+ * The oldest loaded release published under schema 1.1 or later, i.e. the
+ * release the additive metrics first appear in. Null when every loaded file
+ * is still on 1.0.
+ */
+export function firstV11Version(releases: LoadedRelease[]): string | null {
+  let first: string | null = null;
+  for (const r of releases) {
+    const minor = Number(r.release.schema_version.split(".")[1]);
+    if (Number.isFinite(minor) && minor >= 1) first = r.version;
+  }
+  return first;
+}
+
+/** Fill a content-module template like "measured in {n} of {m}" with values. */
+export function fillTemplate(
+  template: string,
+  vars: Record<string, string | number>,
+): string {
+  return template.replace(/\{(\w+)\}/g, (match, name) =>
+    name in vars ? String(vars[name]) : match,
+  );
+}
+
 /** The gate floor for the current language selection, if one is published. */
 export function gateFloor(
   gates: Gates | null,

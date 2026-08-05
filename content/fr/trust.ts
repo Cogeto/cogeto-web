@@ -43,6 +43,34 @@ export interface TrustContent {
   goldenCasesStatLabel: string;
   unavailableTitle: string;
   unavailableBody: string;
+  /** Release picker label and the badge on the newest entry. */
+  releaseLabel: string;
+  latestBadge: string;
+  /** The compare-by control and its four modes. */
+  compareLabel: string;
+  compareNone: string;
+  compareReleases: string;
+  compareModels: string;
+  compareLanguages: string;
+  compareHint: string;
+  /** Two-way comparison delta column heading and percentage-point unit. */
+  deltaHeading: string;
+  pointsUnit: string;
+  /** Screen-reader tag on the best value in a side-by-side row. */
+  highestLabel: string;
+  /** A metric published as null: the run had no cases to measure. */
+  noCasesLabel: string;
+  /** Cell and hint templates around data a release does not carry. */
+  notMeasuredInLabel: string;
+  configCoverageNote: string;
+  v11Note: string;
+  viewReleaseCta: string;
+  /** Table and chat labels that previously lived hardcoded in markup. */
+  metricColLabel: string;
+  casesPassLabel: string;
+  failingCasesLabel: string;
+  releaseNotesHeading: string;
+  measuredAtLabel: string;
 }
 
 export const trust: TrustContent = {
@@ -133,4 +161,27 @@ export const trust: TrustContent = {
   unavailableTitle: "Actualisation des scores de précision",
   unavailableBody:
     "Les données publiées n'ont pas pu être lues pour l'instant. Cette page se met à jour à partir du référentiel de produits dans l'heure. Veuillez revenir sous peu ou lire les fichiers directement sur GitHub.",
+  releaseLabel: "Version",
+  latestBadge: "la plus récente",
+  compareLabel: "Comparer",
+  compareNone: "Vue simple",
+  compareReleases: "Versions",
+  compareModels: "Modèles",
+  compareLanguages: "Langues",
+  compareHint: "Choisissez jusqu'à trois éléments à lire côte à côte.",
+  deltaHeading: "Évolution",
+  pointsUnit: "pt",
+  highestLabel: "valeur la plus élevée",
+  noCasesLabel: "aucun cas dans cette mesure",
+  notMeasuredInLabel: "Non mesuré dans {version}",
+  configCoverageNote:
+    "{config} est mesurée dans {n} des {m} versions chargées, pour la première fois dans {version}.",
+  v11Note:
+    "La précision des contradictions, la précision des remplacements et celle du routage de réécriture sont publiées à partir du schéma 1.1, mesurées pour la première fois dans {version}.",
+  viewReleaseCta: "Afficher {version}",
+  metricColLabel: "Métrique",
+  casesPassLabel: "cas réussis",
+  failingCasesLabel: "Identifiants des cas en échec :",
+  releaseNotesHeading: "Notes des versions",
+  measuredAtLabel: "Mesuré à la version",
 };

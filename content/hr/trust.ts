@@ -40,6 +40,34 @@ export interface TrustContent {
   goldenCasesStatLabel: string;
   unavailableTitle: string;
   unavailableBody: string;
+  /** Release picker label and the badge on the newest entry. */
+  releaseLabel: string;
+  latestBadge: string;
+  /** The compare-by control and its four modes. */
+  compareLabel: string;
+  compareNone: string;
+  compareReleases: string;
+  compareModels: string;
+  compareLanguages: string;
+  compareHint: string;
+  /** Two-way comparison delta column heading and percentage-point unit. */
+  deltaHeading: string;
+  pointsUnit: string;
+  /** Screen-reader tag on the best value in a side-by-side row. */
+  highestLabel: string;
+  /** A metric published as null: the run had no cases to measure. */
+  noCasesLabel: string;
+  /** Cell and hint templates around data a release does not carry. */
+  notMeasuredInLabel: string;
+  configCoverageNote: string;
+  v11Note: string;
+  viewReleaseCta: string;
+  /** Table and chat labels that previously lived hardcoded in markup. */
+  metricColLabel: string;
+  casesPassLabel: string;
+  failingCasesLabel: string;
+  releaseNotesHeading: string;
+  measuredAtLabel: string;
 }
 
 export const trust: TrustContent = {
@@ -130,4 +158,27 @@ export const trust: TrustContent = {
   unavailableTitle: "Rezultati točnosti upravo se osvježavaju",
   unavailableBody:
     "Objavljene podatke trenutačno nije moguće pročitati. Ova se stranica sama ažurira iz repozitorija proizvoda unutar sat vremena. Vratite se uskoro ili pročitajte datoteke izravno na GitHubu.",
+  releaseLabel: "Izdanje",
+  latestBadge: "najnovije",
+  compareLabel: "Usporedba",
+  compareNone: "Pojedinačni prikaz",
+  compareReleases: "Izdanja",
+  compareModels: "Modeli",
+  compareLanguages: "Jezici",
+  compareHint: "Odaberite do tri za čitanje jedno uz drugo.",
+  deltaHeading: "Promjena",
+  pointsUnit: "p. b.",
+  highestLabel: "najviše",
+  noCasesLabel: "nema slučajeva u ovom mjerenju",
+  notMeasuredInLabel: "Nije mjereno u {version}",
+  configCoverageNote:
+    "{config} je mjerena u {n} od {m} učitanih izdanja, prvi put u {version}.",
+  v11Note:
+    "Preciznost proturječnosti, točnost zamjena i točnost usmjeravanja preoblikovanih upita objavljuju se od sheme 1.1, prvi put mjerene u {version}.",
+  viewReleaseCta: "Prikaži {version}",
+  metricColLabel: "Metrika",
+  casesPassLabel: "slučajeva prolazi",
+  failingCasesLabel: "Identifikatori palih slučajeva:",
+  releaseNotesHeading: "Bilješke iz izdanja",
+  measuredAtLabel: "Mjereno pri izdanju",
 };

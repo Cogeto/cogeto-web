@@ -43,6 +43,34 @@ export interface TrustContent {
   goldenCasesStatLabel: string;
   unavailableTitle: string;
   unavailableBody: string;
+  /** Release picker label and the badge on the newest entry. */
+  releaseLabel: string;
+  latestBadge: string;
+  /** The compare-by control and its four modes. */
+  compareLabel: string;
+  compareNone: string;
+  compareReleases: string;
+  compareModels: string;
+  compareLanguages: string;
+  compareHint: string;
+  /** Two-way comparison delta column heading and percentage-point unit. */
+  deltaHeading: string;
+  pointsUnit: string;
+  /** Screen-reader tag on the best value in a side-by-side row. */
+  highestLabel: string;
+  /** A metric published as null: the run had no cases to measure. */
+  noCasesLabel: string;
+  /** Cell and hint templates around data a release does not carry. */
+  notMeasuredInLabel: string;
+  configCoverageNote: string;
+  v11Note: string;
+  viewReleaseCta: string;
+  /** Table and chat labels that previously lived hardcoded in markup. */
+  metricColLabel: string;
+  casesPassLabel: string;
+  failingCasesLabel: string;
+  releaseNotesHeading: string;
+  measuredAtLabel: string;
 }
 
 export const trust: TrustContent = {
@@ -133,4 +161,27 @@ export const trust: TrustContent = {
   unavailableTitle: "Trust scores are refreshing",
   unavailableBody:
     "The published data could not be read just now. This page updates itself from the product repository within the hour. Please check back shortly, or read the files directly on GitHub.",
+  releaseLabel: "Release",
+  latestBadge: "latest",
+  compareLabel: "Compare",
+  compareNone: "Single view",
+  compareReleases: "Releases",
+  compareModels: "Models",
+  compareLanguages: "Languages",
+  compareHint: "Pick up to three to read side by side.",
+  deltaHeading: "Change",
+  pointsUnit: "pp",
+  highestLabel: "highest",
+  noCasesLabel: "no cases in this run",
+  notMeasuredInLabel: "Not measured in {version}",
+  configCoverageNote:
+    "{config} is measured in {n} of {m} loaded releases, first in {version}.",
+  v11Note:
+    "Contradiction precision, supersedes accuracy, and query-rewrite accuracy are published from schema 1.1 on, first measured in {version}.",
+  viewReleaseCta: "View {version}",
+  metricColLabel: "Metric",
+  casesPassLabel: "cases pass",
+  failingCasesLabel: "Failing case ids:",
+  releaseNotesHeading: "Notes from the releases",
+  measuredAtLabel: "Measured at release",
 };
