@@ -331,7 +331,15 @@ export function validateRelease(data: unknown): TrustRelease | null {
     }
     const gb = data.generated_by;
     if (!isObj(gb)) return null;
-    if (!isString(gb.release) || !/^v\d+\.\d+\.\d+$/.test(gb.release)) return null;
+    // vX.Y.Z with an optional lowercase suffix (e.g. v1.4.2-local), matching
+    // the product repo's identifiers for runs published outside the plain
+    // release line.
+    if (
+      !isString(gb.release) ||
+      !/^v\d+\.\d+\.\d+(?:-[a-z0-9][a-z0-9-]*)?$/.test(gb.release)
+    ) {
+      return null;
+    }
     if (!isString(gb.commit) || !/^[0-9a-f]{7,40}$/.test(gb.commit)) return null;
     if (!isString(gb.harness)) return null;
     if (!isString(gb.generated_at)) return null;
